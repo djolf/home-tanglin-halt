@@ -1,25 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { AnimatePresence } from "framer-motion";
+import React from "react";
+import { Route, Switch, useLocation } from "react-router-dom";
+import "./App.scss";
+import HomePage from "./components/HomePage";
+import MVPage from "./components/MVPage";
+import WriteUp from "./components/WriteUp";
 
-function App() {
+const App = () => {
+  const location = useLocation();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AnimatePresence exitBeforeEnter initial={false}>
+      <Switch location={location} key={location.pathname}>
+        <Route path="/mv">
+          <MVPage />
+        </Route>
+        <Route path="/writeup">
+          <WriteUp />
+        </Route>
+        <Route path="/">
+          <HomePage/>
+        </Route>
+      </Switch>
+    </AnimatePresence>
   );
 }
 
