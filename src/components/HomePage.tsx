@@ -41,7 +41,7 @@ const GridContainer = styled.div`
   height: 100vh;
   display: grid;
   grid-template: 
-    "m m m m m m" 1fr
+    "m m m m m m" 150px
     ". . . . . ." 1fr
     ". . . . . ." 1fr
     "h h h h . ." 1fr

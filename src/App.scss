@@ -9,9 +9,10 @@
 }
 
 .Writeup {
-  background: url(./assets/images/writeup-bg.jpg);
+  background: url(./assets/images/writeup-bg.jpg) rgba(0, 0, 0, 0.4);
   background-repeat: no-repeat;
   background-size: cover;
+  background-blend-mode: multiply;
   width: 100%;
   height: 100vh;
   overflow: hidden;

@@ -9,7 +9,7 @@ import WriteUp from "./components/WriteUp";
 const App = () => {
   const location = useLocation();
   return (
-    <AnimatePresence exitBeforeEnter initial={false}>
+    <AnimatePresence exitBeforeEnter >
       <Switch location={location} key={location.pathname}>
         <Route path="/mv">
           <MVPage />

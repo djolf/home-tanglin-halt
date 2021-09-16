@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
+import { useHistory } from "react-router";
 import styled from "styled-components";
-import logo from "../../assets/images/logo.svg";
 
 type MenuProps = {
   showLogo?: boolean;
@@ -11,23 +11,31 @@ type MenuProps = {
 const Menu = (props: MenuProps) => {
   const { showLogo, color } = props;
   const [show, setShow] = useState(false);
+  const history = useHistory();
 
   const items = [
     {
+      name: "Write Up",
+      url: "/writeup",
+    },
+    {
       name: "Portraits",
+      url: "/portraits",
     },
     {
       name: "Sound Gallery",
+      url: "/sound-gallery",
     },
     {
       name: "Stories",
+      url: "/stories",
     },
   ];
 
   return (
     <Menubar color={color}>
       {showLogo && (
-        <div className="logo-container">
+        <div className="logo-container" onClick={() => history.push('/')}>
           <div className="home">home.</div>
           <div className="th">TANGLIN HALT</div>
         </div>
@@ -61,6 +69,7 @@ const Menu = (props: MenuProps) => {
                 whileHover={{
                   scale: 1.1,
                 }}
+                onClick={() => history.push(item.url)}
               >
                 {item.name}
               </motion.li>
@@ -89,6 +98,7 @@ const Menubar = styled.div`
   height: 100%;
 
   .logo-container {
+    margin-left: 15px;
     margin-right: auto;
     display: flex;
     align-items: stretch;
