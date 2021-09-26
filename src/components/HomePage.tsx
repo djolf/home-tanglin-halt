@@ -21,7 +21,7 @@ const HomePage = () => {
           <div className="halt">HALT</div>
         </div>
         <div className="a" onClick={() => history.push('/writeup')}>
-          <motion.img animate={{x: [0, -15, 0, 15, 0]}} transition={{type: "tween", ease: "linear", repeat: Infinity, repeatType: "loop"}} src={arrow} alt="" />
+          <motion.img animate={{x: [0, 15, 0]}} transition={{type: "tween", ease: "linear", repeat: Infinity, repeatType: "loop"}} src={arrow} alt="" />
         </div>
         <div className="l">
           <p>An initiative by Lincoln Lim</p>

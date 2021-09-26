@@ -2,8 +2,10 @@ import { motion } from "framer-motion"
 import styled from "styled-components";
 import Menu from "./menu/menu";
 import arrow from "../assets/images/arrow.svg";
+import { useHistory } from "react-router";
 
 const WriteUp = () => {
+  const history = useHistory();
   return (
     <motion.div className="Writeup">
       <GridContainer>
@@ -20,10 +22,10 @@ const WriteUp = () => {
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
           </div>
         </div>
-          <div className="scroll">
+          <div className="scroll" onClick={ () => history.push('/mv')}>
             <span>Scroll</span>
             <div className="arrow">
-              <motion.img animate={{x: [0, -15, 0, 15, 0]}} transition={{type: "tween", ease: "linear", repeat: Infinity, repeatType: "loop"}} src={arrow} alt="" />
+              <motion.img animate={{x: [0, 15, 0]}} transition={{type: "tween", ease: "linear", repeat: Infinity, repeatType: "loop"}} src={arrow} alt="" />
             </div>
           </div>
       </GridContainer>
@@ -66,7 +68,7 @@ const GridContainer = styled.div`
     .text-container {
       display: flex;
       flex-direction: column;
-      width: 100%:
+      width: 100%;
       align-items: center;
       justify-content: center;
     }
@@ -93,6 +95,7 @@ const GridContainer = styled.div`
   }
 
   .scroll {
+    cursor: pointer;
     grid-area: s;
     display: flex;
     justify-content: flex-end;
@@ -105,6 +108,9 @@ const GridContainer = styled.div`
     span {
       margin-right: 1rem;
       padding-bottom: 5px;
+    }
+    .arrow {
+      width: 35%;
     }
   }
 `

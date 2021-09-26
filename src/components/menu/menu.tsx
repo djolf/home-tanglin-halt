@@ -98,6 +98,7 @@ const Menubar = styled.div`
   height: 100%;
 
   .logo-container {
+    cursor: pointer;
     margin-left: 15px;
     margin-right: auto;
     display: flex;
@@ -156,7 +157,7 @@ const Menubar = styled.div`
       }
       .bottom {
         width: 30px;
-        transform: rotate(45deg) translate(-1px, -1px);
+        transform: rotate(45deg) translate(-2px, -1px);
         margin: 0;
       }
     }
