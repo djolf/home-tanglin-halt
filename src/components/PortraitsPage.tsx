@@ -105,6 +105,7 @@ const GridContainer = styled.div`
         margin-left: 5%;
       }
       .button {
+        cursor: pointer;
         background: #386641;
         padding: 5px;
         color: white;

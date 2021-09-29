@@ -33,9 +33,26 @@
   overflow: hidden;
 }
 
+.SoundGallery {
+  background: #f7bbd3;
+  background-blend-mode: multiply;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.StoriesPage {
+  background: #fffbe8 url(./assets/images/pattern-bg.png);
+  background-blend-mode: multiply;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
 body {
   width: 100%;
   height: 100vh;
   overflow: hidden;
 }
-

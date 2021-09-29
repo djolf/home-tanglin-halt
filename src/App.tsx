@@ -5,6 +5,8 @@ import "./App.scss";
 import HomePage from "./components/HomePage";
 import MVPage from "./components/MVPage";
 import PortraitsPage from "./components/PortraitsPage";
+import SoundGallery from "./components/SoundGallery";
+import StoriesPage from "./components/StoriesPage";
 import WriteUp from "./components/WriteUp";
 
 const App = () => {
@@ -12,6 +14,12 @@ const App = () => {
   return (
     <AnimatePresence exitBeforeEnter >
       <Switch location={location} key={location.pathname}>
+        <Route path="/stories">
+          <StoriesPage />
+        </Route>
+        <Route path="/sound-gallery">
+          <SoundGallery />
+        </Route>
         <Route path="/portraits">
           <PortraitsPage />
         </Route>
