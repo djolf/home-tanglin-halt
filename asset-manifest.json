@@ -1,26 +1,35 @@
 {
   "files": {
-    "main.css": "/home-tanglin-halt/static/css/main.d5eb917c.chunk.css",
-    "main.js": "/home-tanglin-halt/static/js/main.4b846fd7.chunk.js",
-    "main.js.map": "/home-tanglin-halt/static/js/main.4b846fd7.chunk.js.map",
-    "runtime-main.js": "/home-tanglin-halt/static/js/runtime-main.354d6ec7.js",
-    "runtime-main.js.map": "/home-tanglin-halt/static/js/runtime-main.354d6ec7.js.map",
-    "static/js/2.b4f7ea49.chunk.js": "/home-tanglin-halt/static/js/2.b4f7ea49.chunk.js",
-    "static/js/2.b4f7ea49.chunk.js.map": "/home-tanglin-halt/static/js/2.b4f7ea49.chunk.js.map",
-    "static/js/3.601fcba9.chunk.js": "/home-tanglin-halt/static/js/3.601fcba9.chunk.js",
-    "static/js/3.601fcba9.chunk.js.map": "/home-tanglin-halt/static/js/3.601fcba9.chunk.js.map",
+    "main.css": "/home-tanglin-halt/static/css/main.6fe79853.chunk.css",
+    "main.js": "/home-tanglin-halt/static/js/main.6891842b.chunk.js",
+    "main.js.map": "/home-tanglin-halt/static/js/main.6891842b.chunk.js.map",
+    "runtime-main.js": "/home-tanglin-halt/static/js/runtime-main.a4932195.js",
+    "runtime-main.js.map": "/home-tanglin-halt/static/js/runtime-main.a4932195.js.map",
+    "static/js/2.148f61a1.chunk.js": "/home-tanglin-halt/static/js/2.148f61a1.chunk.js",
+    "static/js/2.148f61a1.chunk.js.map": "/home-tanglin-halt/static/js/2.148f61a1.chunk.js.map",
+    "static/js/3.33c1b879.chunk.js": "/home-tanglin-halt/static/js/3.33c1b879.chunk.js",
+    "static/js/3.33c1b879.chunk.js.map": "/home-tanglin-halt/static/js/3.33c1b879.chunk.js.map",
     "index.html": "/home-tanglin-halt/index.html",
-    "static/css/main.d5eb917c.chunk.css.map": "/home-tanglin-halt/static/css/main.d5eb917c.chunk.css.map",
-    "static/js/2.b4f7ea49.chunk.js.LICENSE.txt": "/home-tanglin-halt/static/js/2.b4f7ea49.chunk.js.LICENSE.txt",
+    "static/css/main.6fe79853.chunk.css.map": "/home-tanglin-halt/static/css/main.6fe79853.chunk.css.map",
+    "static/js/2.148f61a1.chunk.js.LICENSE.txt": "/home-tanglin-halt/static/js/2.148f61a1.chunk.js.LICENSE.txt",
     "static/media/index.scss": "/home-tanglin-halt/static/media/Rubik-Regular.b3a32aec.ttf",
     "static/media/Home.@2x.d1678877.svg": "/home-tanglin-halt/static/media/Home.@2x.d1678877.svg",
     "static/media/arrow.81c621cd.svg": "/home-tanglin-halt/static/media/arrow.81c621cd.svg",
-    "static/media/App.scss": "/home-tanglin-halt/static/media/writeup-bg.a9bea85b.jpg"
+    "static/media/App.scss": "/home-tanglin-halt/static/media/writeup-bg.a9bea85b.jpg",
+    "static/media/portraits1.42b75381.jpg": "/home-tanglin-halt/static/media/portraits1.42b75381.jpg",
+    "static/media/portraits2.904d65fe.jpg": "/home-tanglin-halt/static/media/portraits2.904d65fe.jpg",
+    "static/media/sg1.a08b770f.jpg": "/home-tanglin-halt/static/media/sg1.a08b770f.jpg",
+    "static/media/sg2.e2a09560.jpg": "/home-tanglin-halt/static/media/sg2.e2a09560.jpg",
+    "static/media/sg3.afd764bf.jpg": "/home-tanglin-halt/static/media/sg3.afd764bf.jpg",
+    "static/media/sg4.6d20861b.jpg": "/home-tanglin-halt/static/media/sg4.6d20861b.jpg",
+    "static/media/sg5.981e5e8b.jpg": "/home-tanglin-halt/static/media/sg5.981e5e8b.jpg",
+    "static/media/sg6.6157bd29.jpg": "/home-tanglin-halt/static/media/sg6.6157bd29.jpg",
+    "static/media/stories-from-pub.58c6cbda.png": "/home-tanglin-halt/static/media/stories-from-pub.58c6cbda.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.354d6ec7.js",
-    "static/js/2.b4f7ea49.chunk.js",
-    "static/css/main.d5eb917c.chunk.css",
-    "static/js/main.4b846fd7.chunk.js"
+    "static/js/runtime-main.a4932195.js",
+    "static/js/2.148f61a1.chunk.js",
+    "static/css/main.6fe79853.chunk.css",
+    "static/js/main.6891842b.chunk.js"
   ]
 }
