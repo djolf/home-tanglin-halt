@@ -10,6 +10,7 @@ import img4 from "../assets/images/sg4.jpg"
 import img5 from "../assets/images/sg5.jpg"
 import img6 from "../assets/images/sg6.jpg"
 import CircleImg from "./circleImg/CircleImg";
+import dataStore from "../store";
 
 const SoundGallery = () => {
   const history = useHistory();
@@ -42,7 +43,10 @@ const SoundGallery = () => {
           <CircleImg src={img5} className="p5" size={150} />
           <CircleImg src={img6} className="p6" size={150} />
         </div>
-        <div className="scroll" onClick={() => history.push("/stories")}>
+        <div className="scroll" onClick={() => {
+          dataStore.setCurrentPage(5);
+          history.push("/stories");
+        }}>
           <span>Scroll</span>
           <div className="arrow">
             <motion.img

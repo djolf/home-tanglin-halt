@@ -4,6 +4,7 @@ import Menu from "./menu/menu";
 import arrow from "../assets/images/arrow-red.png";
 import styled from "styled-components";
 import image from "../assets/images/stories-from-pub.png";
+import dataStore from "../store";
 
 const StoriesPage = () => {
   const history = useHistory();
@@ -27,13 +28,16 @@ const StoriesPage = () => {
           </div>
           <div className="text">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan.
-            <div className="button">VIEW PORTRAITS</div>
+            <div className="button">READ MORE</div>
           </div>
           <div className="image">
             <img src={image} alt="" />
           </div>
         </div>
-        <div className="scroll" onClick={() => history.push("/stories")}>
+        <div className="scroll" onClick={() => {
+          dataStore.setCurrentPage(6);
+          history.push("/thanks")
+        }}>
           <span>End</span>
           <div className="arrow">
             <motion.img
@@ -63,8 +67,7 @@ const GridContainer = styled.div`
   height: 100vh;
   display: grid;
   grid-template:
-    "menu" 150px
-    ".   " minmax(auto, 150px)   
+    "menu" 75px
     "main" 600px
     "s" minmax(50px, 250px)
     / 1fr;
@@ -81,17 +84,20 @@ const GridContainer = styled.div`
   .main {
     grid-area: main;
     align-self: stretch;
-    position: relative;
+    /* position: relative; */
     padding: 0 15px;
+    padding-left: 30px;
     display: grid;
     grid-template:
-      "head img" 1fr
-      "text img" 1fr
-    /  1fr 1fr;
-
+      "head" 1fr
+      "text" 1fr
+      "img" 1fr
+    /  1fr;
+    
+    
     .title-group {
       grid-area: head;
-      justify-self: end;
+      justify-self: start;
       .title {
         /* line-height: 6.5rem; */
         letter-spacing: 0.5rem;
@@ -102,12 +108,15 @@ const GridContainer = styled.div`
     }
     .text {
       grid-area: text;
-      width: 70%;
+      /* width: 100%; */
+      margin-top: 15px;
       font-family: Rubik;
       font-weight: 400;
-      font-size: 0.9rem;
+      font-size: 1rem;
       color: #bf2553;
-      justify-self: end;
+      justify-self: start;
+      background: rgba(255,255,255,0.3);
+      padding: 15px;
     }
     .button {
       cursor: pointer;
@@ -120,14 +129,17 @@ const GridContainer = styled.div`
       justify-content: center;
       font-family: Rubik;
       font-weight: 400;
-      margin-left: auto;
+      margin-right: auto;
       margin-top: 15px;
     }
     .image {
       grid-area: img;
+      position: absolute;
+      bottom: 0px;
+      z-index: -1;
     }
   }
-
+  
   .scroll {
     cursor: pointer;
     grid-area: s;
@@ -147,17 +159,76 @@ const GridContainer = styled.div`
       width: 35%;
     }
   }
+
+  @media screen and (min-width: 769px) {
+    grid-template:
+    "menu" 150px
+    ".   " minmax(auto, 150px)
+    "main" 600px
+    "s" minmax(50px, 250px)
+    / 1fr;
+
+    .main {
+      grid-template:
+        "head img" 1fr
+        "text img" 1fr
+      /  1fr 1fr;
+      
+      .title-group {
+        justify-self: end;
+      }  
+
+      .text {
+        grid-area: text;
+        width: 70%;
+        margin-top: 15px;
+        font-family: Rubik;
+        font-weight: 400;
+        font-size: 1rem;
+        color: #bf2553;
+        justify-self: end;
+        background: none;
+        padding: 0;
+      }
+      .button {
+        margin-left: auto;
+        margin-right: 0;
+      }
+      .image {
+        grid-area: img;
+        position: unset;
+        /* bottom: 0px; */
+        /* z-index: -1; */
+      }
+    }
+  }
+
+  @media screen and (min-width: 992px) {
+    
+  }
 `;
 
 interface IProps {
   fontSize?: string;
+  mobileFontSize?: string;
+  tabletFontSize?: string;
 }
 
 const StrokedText = styled.div<IProps>`
   font-family: hagona;
-  font-size: ${(props) => (props.fontSize ? props.fontSize : '4rem')};
+  font-size: ${(props) => (props.mobileFontSize ? props.mobileFontSize : '3.6rem')};
+  line-height: 1.2;
   color: ${(props) => (props.color ? props.color : "white")};
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke-width: 3px;
+  
+  @media screen and (min-width: 769px) {
+    font-size: ${(props) => (props.tabletFontSize ? props.tabletFontSize : '4rem')};
+    line-height: 1.5;
+  }
+
+  @media screen and (min-width: 992px) {
+    font-size: ${(props) => (props.fontSize ? props.fontSize : '4rem')};
+  }
 `;
 
