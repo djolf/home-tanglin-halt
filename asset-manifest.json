@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/home-tanglin-halt/static/css/main.61af1191.chunk.css",
-    "main.js": "/home-tanglin-halt/static/js/main.cead294f.chunk.js",
-    "main.js.map": "/home-tanglin-halt/static/js/main.cead294f.chunk.js.map",
+    "main.js": "/home-tanglin-halt/static/js/main.fcccda0d.chunk.js",
+    "main.js.map": "/home-tanglin-halt/static/js/main.fcccda0d.chunk.js.map",
     "runtime-main.js": "/home-tanglin-halt/static/js/runtime-main.c4ff64a8.js",
     "runtime-main.js.map": "/home-tanglin-halt/static/js/runtime-main.c4ff64a8.js.map",
     "static/js/2.9c6d3f72.chunk.js": "/home-tanglin-halt/static/js/2.9c6d3f72.chunk.js",
@@ -30,6 +30,6 @@
     "static/js/runtime-main.c4ff64a8.js",
     "static/js/2.9c6d3f72.chunk.js",
     "static/css/main.61af1191.chunk.css",
-    "static/js/main.cead294f.chunk.js"
+    "static/js/main.fcccda0d.chunk.js"
   ]
 }
