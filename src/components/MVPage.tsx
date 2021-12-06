@@ -10,63 +10,12 @@ import dataStore from "../store";
 const MVPage = () => {
   const history = useHistory();
 
-  const variants = {
-    initial: {
-      display: "none",
-    },
-    exit: {
-      display: "flex",
-    },
-  };
-
   useEffect(() => {
     dataStore.setCurrentPage(2);
   }, [])
 
   return (
     <motion.div className="mv-exit">
-      {/* <motion.div
-        className="portraits"
-        variants={variants}
-        initial="initial"
-        exit="exit"
-      >
-        <motion.div
-          className="column"
-          initial={{ y: "-100vh" }}
-          exit={{ y: 0 }}
-        >
-          <div className="block green"></div>
-          <div className="block yellow"></div>
-          <div className="block orange large"></div>
-        </motion.div>
-        <motion.div
-          className="column"
-          initial={{ y: "-100vh" }}
-          exit={{ y: "12vh", transition: { delay: 0.5 } }}
-        >
-          <div className="block green"></div>
-          <div className="block yellow"></div>
-          <div className="block orange large"></div>
-        </motion.div>
-        <motion.div
-          className="column"
-          initial={{ y: "-100vh" }}
-          exit={{ y: "25vh", transition: { delay: 1 } }}
-        >
-          <div className="block green"></div>
-          <div className="block yellow"></div>
-          <div className="block orange large"></div>
-        </motion.div>
-        <motion.div
-          className="column"
-          initial={{ y: "-100vh" }}
-          exit={{ y: 0, transition: { delay: 1.5 } }}
-        >
-          <div className="block green large"></div>
-          <div className="block yellow large"></div>
-        </motion.div>
-      </motion.div> */}
       <motion.div
         className="MVPage"
         initial={{ opacity: 0 }}
@@ -80,34 +29,12 @@ const MVPage = () => {
           </div>
           <div className="main">
             <div className="ratio-box">
-              {/* <iframe
-                src="https://www.youtube.com/embed/u31qwQUeGuM"
-                title="YouTube video player"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe> */}
-              {/* <div style={{ padding: "42.86% 0 0 0", position: "relative" }}> */}
-                {/* <iframe
-                  src="https://player.vimeo.com/video/207292223?h=f93ddecc0f&autoplay=1&title=0&byline=0&portrait=0"
-                  style={{
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
-                    width: "100%",
-                    height: "100%",
-                  }}
-                  frameBorder="0"
-                  allow="autoplay; fullscreen; picture-in-picture; gyroscope; accelerometer"
-                  allowFullScreen
-                ></iframe> */}
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/R0uqeCf_Zo8" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/R0uqeCf_Zo8?rel=0&autoplay=1" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
               </div>
               <script src="https://player.vimeo.com/api/player.js"></script>
             {/* </div> */}
           </div>
           <div className="scroll" onClick={() => {
-            // dataStore.setCurrentPage(3);
             history.push("/portraits")
           }}>
             <span>Next</span>

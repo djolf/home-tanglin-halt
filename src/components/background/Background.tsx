@@ -1,9 +1,11 @@
-import { AnimatePresence, motion, useAnimation } from "framer-motion";
+import { motion } from "framer-motion";
 import { observer } from "mobx-react-lite";
 import styled from "styled-components";
 import dataStore from "../../store";
 import { Pages } from "../model";
-// import "../transitions.scss";
+import vignette from "../../assets/videos/vignettes.mp4"; 
+import { useEffect, useState } from "react";
+import { autorun } from "mobx";
 
 const BG = [
   {
@@ -32,20 +34,30 @@ const BG = [
   },
   {
     name: "thanks",
-    background: "linear-gradient(to bottom, #e8f7ff 35%, #d1efff 35% 100%)",
-    tabletBackground:
-      "linear-gradient(to bottom, #e8f7ff 20%, #d1efff 20% 100%)",
+    // background: "linear-gradient(to bottom, #e8f7ff 35%, #d1efff 35% 100%)",
   },
 ];
 
 const Background = observer(() => {
-  const controls = useAnimation();
+  const [isLoading, setIsLoading] = useState(false);
+  useEffect(() => {
+    autorun(() => {
+      if ([Pages.HOME, Pages.WRITEUP].includes(dataStore.currentPage)) {
+        setIsLoading(true);
+      }
+    })
+  }, [])
   return (
     <Wrapper
       background={BG[dataStore.currentPage].background}
-      tabletBackground={BG[dataStore.currentPage].tabletBackground}
     >
-      {/* <AnimatePresence exitBeforeEnter> */}
+      {[Pages.HOME, Pages.WRITEUP].includes(dataStore.currentPage) && (
+        <>
+          <video autoPlay muted loop preload="auto" onPlay={() => setIsLoading(false)}>
+            <source src={vignette} type="video/mp4" />
+          </video>
+        </>
+      )}
       {dataStore.currentPage === Pages.PORTRAITS && (
         <motion.div
           className="portraits"
@@ -137,7 +149,6 @@ export default Background;
 
 type BackgroundProps = {
   background?: string;
-  tabletBackground?: string;
 };
 
 const Wrapper = styled.div<BackgroundProps>`
@@ -149,10 +160,7 @@ const Wrapper = styled.div<BackgroundProps>`
   bottom: 0;
   right: 0;
   z-index: -1;
-  background: ${(props) =>
-    props.tabletBackground
-      ? props.tabletBackground
-      : props.background || "white"};
+  background: ${(props) => props.background || "white"};
   @media screen and (min-width: 769px) {
     background: ${(props) => props.background || "white"};
   }

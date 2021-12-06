@@ -10,7 +10,6 @@ import { useEffect } from "react";
 const HomePage = () => {
   const history = useHistory();
   useEffect(() => {
-    console.log('here')
     dataStore.setCurrentPage(0);
   }, [])
   return (

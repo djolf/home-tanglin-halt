@@ -1,4 +1,4 @@
-import { AnimatePresence, AnimateSharedLayout, motion } from "framer-motion";
+import { AnimateSharedLayout, motion } from "framer-motion";
 import { useHistory } from "react-router";
 import Menu from "./menu/menu";
 import arrow from "../assets/images/arrow-blue.png";
