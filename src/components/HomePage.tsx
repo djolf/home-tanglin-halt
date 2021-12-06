@@ -5,9 +5,14 @@ import home from "../assets/images/Home.@2x.svg";
 import arrow from "../assets/images/arrow.svg";
 import Menu from "./menu/menu";
 import dataStore from "../store";
+import { useEffect } from "react";
 
 const HomePage = () => {
   const history = useHistory();
+  useEffect(() => {
+    console.log('here')
+    dataStore.setCurrentPage(0);
+  }, [])
   return (
     <motion.div className="Homepage" key="home" transition={{duration: 0.5}} initial={{x: "100vw"}} animate={{x:0}} exit={{x: "-100vw"}}>
       <GridContainer>
@@ -22,13 +27,13 @@ const HomePage = () => {
           <div className="halt">HALT</div>
         </div>
         <div className="a" onClick={() => {
-          dataStore.setCurrentPage(1);
+          // dataStore.setCurrentPage(1);
           history.push('/writeup')
         }}>
           <motion.img key="img" animate={{x: [0, 15, 0]}} transition={{type: "tween", ease: "linear", repeat: Infinity, repeatType: "loop"}} src={arrow} alt="" />
         </div>
         <div className="l">
-          <p>An initiative by Lincoln Lim</p>
+          <p>an experience by Lincoln Lim</p>
         </div>
         {/* <button onClick={()=> history.push('/mv')}>next</button> */}
       </GridContainer>

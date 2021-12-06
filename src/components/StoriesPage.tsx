@@ -1,13 +1,17 @@
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
 import { useHistory } from "react-router";
 import Menu from "./menu/menu";
 import arrow from "../assets/images/arrow-red.png";
 import styled from "styled-components";
 import image from "../assets/images/stories-from-pub.png";
 import dataStore from "../store";
+import { useEffect } from "react";
 
 const StoriesPage = () => {
   const history = useHistory();
+  useEffect(() => {
+    dataStore.setCurrentPage(5);
+  }, []);
   return (
     <motion.div
       className="StoriesPage"
@@ -22,23 +26,34 @@ const StoriesPage = () => {
         </div>
         <div className="main">
           <div className="title-group">
-            <StrokedText className="title" color="#ff6d6d" fontSize="6rem">stories</StrokedText>
-            <StrokedText className="title" color="#ff6d6d" fontSize="6rem">from the</StrokedText>
-            <StrokedText className="title" color="#ff6d6d" fontSize="6rem">public</StrokedText>
+            <StrokedText className="title" color="#ff6d6d" fontSize="6rem">
+              stories
+            </StrokedText>
+            <StrokedText className="title" color="#ff6d6d" fontSize="6rem">
+              from the
+            </StrokedText>
+            <StrokedText className="title" color="#ff6d6d" fontSize="6rem">
+              public
+            </StrokedText>
           </div>
           <div className="text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan.
-            <div className="button">READ MORE</div>
+            People make home, and in Tanglin Halt, there’s a tapestry of stories
+            to uncover, both difficult and joyous. And those are the stories
+            here—a compilation of living, 59 years in the making.
+            <div className="button">SEE THEIR STORIES</div>
           </div>
           <div className="image">
             <img src={image} alt="" />
           </div>
         </div>
-        <div className="scroll" onClick={() => {
-          dataStore.setCurrentPage(6);
-          history.push("/thanks")
-        }}>
-          <span>End</span>
+        <div
+          className="scroll"
+          onClick={() => {
+            dataStore.setCurrentPage(6);
+            history.push("/thanks");
+          }}
+        >
+          <span>Credits</span>
           <div className="arrow">
             <motion.img
               animate={{ x: [0, 15, 0] }}
@@ -55,8 +70,8 @@ const StoriesPage = () => {
         </div>
       </GridContainer>
     </motion.div>
-  )
-}
+  );
+};
 
 export default StoriesPage;
 
@@ -92,9 +107,8 @@ const GridContainer = styled.div`
       "head" 1fr
       "text" 1fr
       "img" 1fr
-    /  1fr;
-    
-    
+      / 1fr;
+
     .title-group {
       grid-area: head;
       justify-self: start;
@@ -115,7 +129,7 @@ const GridContainer = styled.div`
       font-size: 1rem;
       color: #bf2553;
       justify-self: start;
-      background: rgba(255,255,255,0.3);
+      background: rgba(255, 255, 255, 0.3);
       padding: 15px;
     }
     .button {
@@ -131,15 +145,15 @@ const GridContainer = styled.div`
       font-weight: 400;
       margin-right: auto;
       margin-top: 15px;
+      text-align: center;
     }
     .image {
       grid-area: img;
       position: absolute;
       bottom: 0px;
-      z-index: -1;
     }
   }
-  
+
   .scroll {
     cursor: pointer;
     grid-area: s;
@@ -162,21 +176,21 @@ const GridContainer = styled.div`
 
   @media screen and (min-width: 769px) {
     grid-template:
-    "menu" 150px
-    ".   " minmax(auto, 150px)
-    "main" 600px
-    "s" minmax(50px, 250px)
-    / 1fr;
+      "menu" 150px
+      ".   " minmax(auto, 150px)
+      "main" 600px
+      "s" minmax(50px, 250px)
+      / 1fr;
 
     .main {
       grid-template:
         "head img" 1fr
         "text img" 1fr
-      /  1fr 1fr;
-      
+        / 1fr 1fr;
+
       .title-group {
         justify-self: end;
-      }  
+      }
 
       .text {
         grid-area: text;
@@ -204,7 +218,6 @@ const GridContainer = styled.div`
   }
 
   @media screen and (min-width: 992px) {
-    
   }
 `;
 
@@ -216,19 +229,21 @@ interface IProps {
 
 const StrokedText = styled.div<IProps>`
   font-family: hagona;
-  font-size: ${(props) => (props.mobileFontSize ? props.mobileFontSize : '3.6rem')};
+  font-size: ${(props) =>
+    props.mobileFontSize ? props.mobileFontSize : "3.6rem"};
   line-height: 1.2;
   color: ${(props) => (props.color ? props.color : "white")};
   -webkit-text-fill-color: transparent;
-  -webkit-text-stroke-width: 3px;
-  
+  -webkit-text-stroke-width: 2px;
+
   @media screen and (min-width: 769px) {
-    font-size: ${(props) => (props.tabletFontSize ? props.tabletFontSize : '4rem')};
-    line-height: 1.5;
+    font-size: ${(props) =>
+      props.tabletFontSize ? props.tabletFontSize : "4rem"};
+    line-height: 1.3;
   }
 
   @media screen and (min-width: 992px) {
-    font-size: ${(props) => (props.fontSize ? props.fontSize : '4rem')};
+    font-size: ${(props) => (props.fontSize ? props.fontSize : "4rem")};
+    -webkit-text-stroke-width: 3px;
   }
 `;
-

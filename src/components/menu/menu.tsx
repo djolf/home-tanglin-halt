@@ -7,10 +7,11 @@ import dataStore from "../../store";
 type MenuProps = {
   showLogo?: boolean;
   color?: string;
+  hideMenu?: boolean;
 };
 
 const Menu = (props: MenuProps) => {
-  const { showLogo, color } = props;
+  const { showLogo, color, hideMenu } = props;
   const [show, setShow] = useState(false);
   const history = useHistory();
 
@@ -46,7 +47,7 @@ const Menu = (props: MenuProps) => {
       index: 3,
     },
     {
-      name: "Sound Gallery",
+      name: "Sound Capsule",
       url: "/sound-gallery",
       key: "sound",
       index: 4,
@@ -58,7 +59,7 @@ const Menu = (props: MenuProps) => {
       index: 5,
     },
     {
-      name: "Special Thanks",
+      name: "Credits",
       url: "/thanks",
       key: "thanks",
       index: 6,
@@ -66,7 +67,7 @@ const Menu = (props: MenuProps) => {
   ];
 
   return (
-    <Menubar color={color}>
+    <Menubar color={color} style={{display: hideMenu ? 'none':'flex'}}>
       {showLogo && (
         <div
           className="logo-container"
@@ -136,7 +137,6 @@ const Menu = (props: MenuProps) => {
                   scale: 1.1,
                 }}
                 onClick={() => {
-                  dataStore.setCurrentPage(item.index);
                   history.push(item.url);
                 }}
               >
@@ -167,8 +167,10 @@ const Menubar = styled.div`
   justify-content: flex-end;
   height: 100%;
   width: 100%;
+  z-index: 3;
 
   .logo-container {
+    z-index: 3;
     cursor: pointer;
     margin-left: 15px;
     margin-right: auto;

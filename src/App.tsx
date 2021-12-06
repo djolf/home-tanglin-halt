@@ -16,7 +16,7 @@ const App = () => {
   return (
     <>
       <Background key={"background"} />
-      <AnimatePresence exitBeforeEnter initial={false}>
+      <AnimatePresence exitBeforeEnter>
         <Switch location={location} key={location.pathname}>
           <Route path="/thanks" render={() => {
             return <ThanksPage />

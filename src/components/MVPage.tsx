@@ -18,10 +18,15 @@ const MVPage = () => {
       display: "flex",
     },
   };
+
+  useEffect(() => {
+    dataStore.setCurrentPage(2);
+  }, [])
+
   return (
     <motion.div className="mv-exit">
-      <motion.div
-        className="background"
+      {/* <motion.div
+        className="portraits"
         variants={variants}
         initial="initial"
         exit="exit"
@@ -61,7 +66,7 @@ const MVPage = () => {
           <div className="block green large"></div>
           <div className="block yellow large"></div>
         </motion.div>
-      </motion.div>
+      </motion.div> */}
       <motion.div
         className="MVPage"
         initial={{ opacity: 0 }}
@@ -102,10 +107,10 @@ const MVPage = () => {
             {/* </div> */}
           </div>
           <div className="scroll" onClick={() => {
-            dataStore.setCurrentPage(3);
+            // dataStore.setCurrentPage(3);
             history.push("/portraits")
           }}>
-            <span>Scroll</span>
+            <span>Next</span>
             <div className="arrow">
               <motion.img
                 animate={{ x: [0, 15, 0] }}

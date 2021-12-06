@@ -1,50 +1,25 @@
-import { motion } from "framer-motion"
+import { AnimatePresence, motion } from "framer-motion";
 import { useHistory } from "react-router";
 import Menu from "./menu/menu";
 import arrow from "../assets/images/arrow-green.png";
 import styled from "styled-components";
 import p1 from "../assets/images/portraits1.jpg";
 import p2 from "../assets/images/portraits2.jpg";
-import "./transitions.scss";
 import dataStore from "../store";
+import { useEffect } from "react";
 
 const PortraitsPage = () => {
   const history = useHistory();
+  useEffect(() => {
+    dataStore.setCurrentPage(3);
+  }, []);
   return (
-    <motion.div
-      className="portraits-enter"
-      initial={{ y: "-100vh" }}
-      animate={{ y: 0 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.5 }}
-    >
-      <div className="background">
-        <div className="column">
-          <div className="block"></div>
-          <div className="block"></div>
-          <div className="block large"></div>
-        </div>
-        <div className="column">
-          <div className="block"></div>
-          <div className="block"></div>
-          <div className="block large"></div>
-        </div>
-        <div className="column">
-          <div className="block"></div>
-          <div className="block"></div>
-          <div className="block large"></div>
-        </div>
-        <div className="column">
-          <div className="block large"></div>
-          <div className="block large"></div>
-        </div>
-      </div>
+    <AnimatePresence>
       <motion.div
         className="PortraitsPage"
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 0.5 }}
+        animate={{ opacity: 1, transition: {delay: 1} }}
+        exit={{ opacity: 0, transition: {delay: 0} }}
       >
         <GridContainer>
           <div className="menu">
@@ -55,22 +30,29 @@ const PortraitsPage = () => {
               <img src={p2} alt="" />
             </div>
             <div className="text-area">
-              <StrokedText className="title" color="#f59f49" fontSize="6rem">portraits</StrokedText>
+              <StrokedText className="title" color="#f59f49" fontSize="4.4rem">
+                the portrait journeys
+              </StrokedText>
               <div className="text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan.
+                There’s a beauty in seeing something new and appreciating it
+                with fresh eyes. Look through the lens of five young creative
+                mavericks as they discover parts of Tanglin Halt that connect to
+                their artistic journey, for the very first time.
               </div>
-              <div className="button">VIEW PORTRAITS</div>
+              <div className="button">SEE THEIR JOURNEY</div>
               <div className="p1">
                 <img src={p1} alt="" />
               </div>
             </div>
-
           </div>
-          <div className="scroll" onClick={() => {
-            dataStore.setCurrentPage(4);
-            history.push("/sound-gallery")
-          }}>
-            <span>Scroll</span>
+          <div
+            className="scroll"
+            onClick={() => {
+              dataStore.setCurrentPage(4);
+              history.push("/sound-gallery");
+            }}
+          >
+            <span>Next</span>
             <div className="arrow">
               <motion.img
                 animate={{ x: [0, 15, 0] }}
@@ -87,9 +69,9 @@ const PortraitsPage = () => {
           </div>
         </GridContainer>
       </motion.div>
-    </motion.div>
-  )
-}
+    </AnimatePresence>
+  );
+};
 
 export default PortraitsPage;
 
@@ -149,9 +131,11 @@ const GridContainer = styled.div`
         justify-content: center;
         font-family: Rubik;
         font-weight: 400;
+        font-size: 0.9rem;
         margin-left: auto;
         margin-right: 20%;
         margin-top: 15px;
+        text-align: center;
       }
       .p1 {
         margin-top: 15px;
@@ -179,7 +163,7 @@ const GridContainer = styled.div`
     .p2 {
       position: absolute;
       width: 45%;
-      height:auto;
+      height: auto;
       right: 5%;
       top: 20%;
       img {
@@ -221,96 +205,96 @@ const GridContainer = styled.div`
   }
   @media screen and (min-width: 992px) {
     grid-template:
-    "menu" 150px
-    "main" minmax(600px, auto)
-    "s" minmax(50px, 250px)
-    / 1fr;
+      "menu" 150px
+      "main" minmax(600px, auto)
+      "s" minmax(50px, 250px)
+      / 1fr;
 
     .main {
-    grid-area: main;
-    align-self: stretch;
-    /* overflow: hidden; */
-    position: relative;
+      grid-area: main;
+      align-self: stretch;
+      /* overflow: hidden; */
+      position: relative;
 
-    .text-area {
-      position: absolute;
-      display: flex;
-      flex-direction: column;
-      width: 50%;
-      left: 5%;
-      top: 15%;
+      .text-area {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        left: 5%;
+        top: 15%;
 
-      .title {
+        .title {
+        }
+        .text {
+          width: 70%;
+          font-family: Rubik;
+          font-weight: 400;
+          font-size: 0.9rem;
+          color: #386641;
+          margin-left: 5%;
+        }
+        .button {
+          cursor: pointer;
+          background: #386641;
+          padding: 5px;
+          color: white;
+          width: 150px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-family: Rubik;
+          font-weight: 400;
+          margin-left: auto;
+          margin-right: 20%;
+          margin-top: 15px;
+        }
+        .p1 {
+          margin-top: 15px;
+          display: flex;
+          position: relative;
+          margin-left: auto;
+          width: 75%;
+          img {
+            width: 100%;
+            height: auto;
+            z-index: 2;
+          }
+          &:before {
+            content: "";
+            width: 70%;
+            height: 70%;
+            background-color: #fff7c5;
+            position: absolute;
+            left: -25px;
+            bottom: -25px;
+          }
+        }
       }
-      .text {
-        width: 70%;
-        font-family: Rubik;
-        font-weight: 400;
-        font-size: 0.9rem;
-        color: #386641;
-        margin-left: 5%;
-      }
-      .button {
-        cursor: pointer;
-        background: #386641;
-        padding: 5px;
-        color: white;
-        width: 150px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-family: Rubik;
-        font-weight: 400;
-        margin-left: auto;
-        margin-right: 20%;
-        margin-top: 15px;
-      }
-      .p1 {
-        margin-top: 15px;
-        display: flex;
-        position: relative;
-        margin-left: auto;
-        width: 75%;
+
+      .p2 {
+        position: absolute;
+        width: 45%;
+        height: auto;
+        right: 5%;
+        top: 20%;
         img {
           width: 100%;
           height: auto;
           z-index: 2;
         }
-        &:before {
+        &::before {
           content: "";
-          width: 70%;
-          height: 70%;
-          background-color: #fff7c5;
+          width: 40%;
+          height: 30%;
+          background-color: #ffa963;
           position: absolute;
-          left: -25px;
-          bottom: -25px;
+          right: -25px;
+          top: -25px;
+          z-index: -1;
         }
       }
     }
-
-    .p2 {
-      position: absolute;
-      width: 45%;
-      height:auto;
-      right: 5%;
-      top: 20%;
-      img {
-        width: 100%;
-        height: auto;
-        z-index: 2;
-      }
-      &::before {
-        content: "";
-        width: 40%;
-        height: 30%;
-        background-color: #ffa963;
-        position: absolute;
-        right: -25px;
-        top: -25px;
-        z-index: -1;
-      }
-    }
-  }
   }
 `;
 
@@ -320,8 +304,9 @@ interface IProps {
 
 const StrokedText = styled.div<IProps>`
   font-family: hagona;
-  font-size: ${(props) => (props.fontSize ? props.fontSize : '4rem')};
+  font-size: ${(props) => (props.fontSize ? props.fontSize : "4rem")};
   color: ${(props) => (props.color ? props.color : "white")};
   -webkit-text-fill-color: transparent;
-  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-width: 2px;
+  line-height: 1.3;
 `;

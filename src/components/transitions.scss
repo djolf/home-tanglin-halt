@@ -1,4 +1,4 @@
-.background {
+.portraits {
   display: flex;
   position: absolute;
   top: 0;
@@ -44,9 +44,46 @@
   }
 }
 .mv-exit {
-  .background {
+  .portraits {
     z-index: 9999;
     background: white;
     display: none;
+  }
+}
+
+.sound {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  .circle {
+    border-radius: 50%;
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    &:nth-child(1) {
+      width: 100vw;
+      height: 100vw;
+      background: #f7bcd3;
+    }
+    &:nth-child(2) {
+      width: 75vw;
+      height: 75vw;
+      background: #f8c6da;
+    }
+    &:nth-child(3) {
+      width: 50vw;
+      height: 50vw;
+      background: #f9d1e2;
+    }
+    &:nth-child(4) {
+      width: 25vw;
+      height: 25vw;
+      background: #fadbe9;
+    }
   }
 }

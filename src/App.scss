@@ -10,7 +10,7 @@
 }
 
 .Writeup {
-  background: url(./assets/images/writeup-bg.jpg) rgba(0, 0, 0, 0.4);
+  background: url(./assets/images/writeup-bg.jpg) rgba(0, 0, 0, 0.55);
   background-repeat: no-repeat;
   background-size: cover;
   background-blend-mode: multiply;
@@ -35,7 +35,7 @@
 }
 
 .SoundGallery {
-  background: #f7bbd3;
+  // background: url(./assets/images/pattern-bg.png) rgba(255, 255, 255, 0.1);
   background-blend-mode: multiply;
   width: 100%;
   height: 100vh;
@@ -52,8 +52,19 @@
   position: relative;
 }
 
-body {
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
+.ThanksPage::before {
+  content: "";
+  opacity: 0.5;
+  background: url(./assets/images/pattern-bg.png);
+  background-blend-mode: multiply;
+  // width: 100%;
+  // height: 100vh;
+  // overflow: hidden;
+  // position: relative;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
 }

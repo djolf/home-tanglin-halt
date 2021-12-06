@@ -4,9 +4,13 @@ import Menu from "./menu/menu";
 import arrow from "../assets/images/arrow.svg";
 import { useHistory } from "react-router";
 import dataStore from "../store";
+import { useEffect } from "react";
 
 const WriteUp = () => {
   const history = useHistory();
+  useEffect(() => {
+    dataStore.setCurrentPage(1);
+  }, []);
   return (
     <motion.div className="Writeup">
       <GridContainer>
@@ -16,26 +20,41 @@ const WriteUp = () => {
         <div className="main">
           <div className="text-container">
             <div className="heading">
-              <span className="line1">THIS IS WHERE</span>
-              <span className="line2">HEADER SITS</span>
+              <span className="line1">to me,</span>
+              <span className="line2">this is home.</span>
             </div>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
-              ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas
-              accumsan lacus vel facilisis.
+              Singapore is a country built upon a tenuous balance— progress and
+              preservation the nation’s yin and yang. Because while we search
+              for that ever-elusive “better”, I think there’s a part of us that
+              wants to hit pause—and nothing expresses that more than Tanglin
+              Halt.
             </p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p>
+              To me personally, it’s a place I grew up around—and now, in the
+              time of a pandemic, one I found myself returning to again and
+              again, just as it prepares to undergo Singapore’s biggest
+              redevelopment scheme since 1999.
+            </p>
+            <p>
+              In short, this project is a celebration, a reminder to appreciate
+              the places that matter and to keep them relevant. So, to the
+              Tanglin Halts for all of us, to the hometown haunts and childhood
+              hangouts, this is for you.
+            </p>
+            <p>
+              <strong>This is home.</strong>
+            </p>
           </div>
         </div>
         <div
           className="scroll"
           onClick={() => {
-            dataStore.setCurrentPage(2);
+            // dataStore.setCurrentPage(2);
             history.push("/music-video");
           }}
         >
-          <span>Scroll</span>
+          <span>Next</span>
           <div className="arrow">
             <motion.img
               animate={{ x: [0, 15, 0] }}
@@ -93,7 +112,7 @@ const GridContainer = styled.div`
     text-align: center;
     color: white;
     font-family: Rubik;
-    font-weight: 500;
+    font-weight: 400;
     align-self: center;
     padding: 0 15px;
 
@@ -112,6 +131,7 @@ const GridContainer = styled.div`
       width: 290px;
       margin: 0 auto;
       margin-bottom: 2rem;
+      font-weight: 500;
       .line1 {
         text-align: left;
       }
