@@ -1,10 +1,11 @@
 {
   "name": "home-tanglin-halt",
-  "homepage": "https://djolf.github.io/home-tanglin-halt",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@ant-design/icons": "^4.7.0",
     "@arctext/react": "^1.0.0",
+    "antd": "^4.17.2",
     "cra-template-typescript": "1.1.2",
     "framer-motion": "^4.1.17",
     "gh-pages": "^3.2.3",

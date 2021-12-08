@@ -78,7 +78,6 @@ class DataStore {
   }
 
   setCurrentPage(value:number) {
-    console.log('currentPage',value);
     this.currentPage = value;
   }
 

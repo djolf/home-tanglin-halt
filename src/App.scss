@@ -1,5 +1,4 @@
 .Homepage {
-  // background: url(./assets/images/home-bg@2x.jpg) rgba(0, 0, 0, 0.4);
   background-repeat: no-repeat;
   background-size: cover;
   background-blend-mode: multiply;
@@ -10,7 +9,6 @@
 }
 
 .Writeup {
-  // background: url(./assets/images/writeup-bg.jpg) rgba(0, 0, 0, 0.55);
   background-repeat: no-repeat;
   background-size: cover;
   background-blend-mode: multiply;
@@ -35,7 +33,6 @@
 }
 
 .SoundGallery {
-  // background: url(./assets/images/pattern-bg.png) rgba(255, 255, 255, 0.1);
   background-blend-mode: multiply;
   width: 100%;
   height: 100vh;
@@ -50,4 +47,16 @@
   height: 100vh;
   overflow: hidden;
   position: relative;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.my-20 {
+  margin-top: 20px !important;
+}
+.my-30 {
+  margin-top: 30px !important;
 }

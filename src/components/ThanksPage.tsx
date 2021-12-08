@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { useEffect } from "react";
 import dataStore from "../store";
 import pattern from "../assets/images/pattern-bg.png";
+import nac from "../assets/images/nac_eng_logo.jpg";
 
 const ThanksPage = () => {
   useEffect(() => {
@@ -59,14 +60,15 @@ const ThanksPage = () => {
                   />
                 </section>
               </div>
-              <div className="col mx-auto">
+              <div className="col">
                 <section className="credits-mv">
                   <h2>MUSIC VIDEO</h2>
-                  <NameCard name="Jeremy Hu" job="Director" />
+                  <NameCard name="Jeremy Hu" job="Director/Editor" />
                   <NameCard name="Lavita Kala" job="Producer" />
                   <NameCard name="Wan Othman" job="Director of Photography" />
                   <NameCard name="Muhd Afa'alhayat" job="Camera Assistant #1" />
                   <NameCard name="Muhammad Ridzwan" job="Camera Assistant #2" />
+                  <NameCard name="Cheong Ying Sien" job="Colourist" />
                   <NameCard name="Charlotte Greenall" job="Translator" />
                 </section>
                 <section className="credits-sound">
@@ -76,7 +78,6 @@ const ThanksPage = () => {
                     job="Field Sound Recordist/Mix Engineer"
                   />
                   <NameCard name="Marcus Chua" job="Videographer/Video Editor" />
-                  <NameCard name="Bryan Ong" job="Field Sound Recordist" />
                 </section>
               </div>
               <div className="col">
@@ -110,8 +111,13 @@ const ThanksPage = () => {
               special thanks to
             </StrokedText>
             <div className="names">
-              <div className="name"><b>The National Arts Council</b></div>
+              <div className="name">
+                <div className="nac-logo">
+                  <img src={nac} alt="National Arts Council" />
+                </div>
+              </div>
               <div className="name">Eric Chua and the <b>Queenstown Town Council</b></div>
+              <div className="name">Sinclair Ang</div>
               <div className="name">Alice Lee, Asmine Lee, and Family</div>
               <div className="name">Mr Chee and Family<br/><b>Fung Onn Medical Store</b></div>
               <div className="name">Uncle Lee and Family<br/><b>Hock Ann Confectionary</b></div>
@@ -187,7 +193,7 @@ const GridContainer = styled.div`
     .credits {
       display: flex;
       margin: 0 auto 60px;
-      justify-content: center;
+      justify-content: space-evenly;
 
       h2 {
         color: #083d77;
@@ -209,6 +215,10 @@ const GridContainer = styled.div`
     background-blend-mode: multiply;
     padding: 60px 0;
     color: #083d77;
+    .nac-logo {
+      max-width: 300px;
+      margin: 0 !important;
+    }
     .names {
       display: flex;
       margin: 0 auto;

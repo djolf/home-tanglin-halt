@@ -1,6 +1,6 @@
-import { motion } from "framer-motion"
-import { useHistory } from "react-router"
-import styled from "styled-components"
+import { motion } from "framer-motion";
+import { useHistory } from "react-router";
+import styled from "styled-components";
 import home from "../assets/images/Home.@2x.svg";
 import arrow from "../assets/images/arrow.svg";
 import Menu from "./menu/menu";
@@ -11,9 +11,16 @@ const HomePage = () => {
   const history = useHistory();
   useEffect(() => {
     dataStore.setCurrentPage(0);
-  }, [])
+  }, []);
   return (
-    <motion.div className="Homepage" key="home" transition={{duration: 0.5}} initial={{x: "100vw"}} animate={{x:0}} exit={{x: "-100vw"}}>
+    <motion.div
+      className="Homepage"
+      key="home"
+      transition={{ duration: 0.5 }}
+      initial={{ x: "100vw" }}
+      animate={{ x: 0 }}
+      exit={{ x: "-100vw" }}
+    >
       <GridContainer>
         <div className="m">
           <Menu />
@@ -25,11 +32,24 @@ const HomePage = () => {
           <div className="tanglin">TANGLIN</div>
           <div className="halt">HALT</div>
         </div>
-        <div className="a" onClick={() => {
-          // dataStore.setCurrentPage(1);
-          history.push('/writeup')
-        }}>
-          <motion.img key="img" animate={{x: [0, 15, 0]}} transition={{type: "tween", ease: "linear", repeat: Infinity, repeatType: "loop"}} src={arrow} alt="" />
+        <div
+          className="a"
+          onClick={() => {
+            history.push("/writeup");
+          }}
+        >
+          <motion.img
+            key="img"
+            animate={{ x: [0, 15, 0] }}
+            transition={{
+              type: "tween",
+              ease: "linear",
+              repeat: Infinity,
+              repeatType: "loop",
+            }}
+            src={arrow}
+            alt=""
+          />
         </div>
         <div className="l">
           <p>an experience by Lincoln Lim</p>
@@ -37,10 +57,10 @@ const HomePage = () => {
         {/* <button onClick={()=> history.push('/mv')}>next</button> */}
       </GridContainer>
     </motion.div>
-  )
-}
+  );
+};
 
-export default HomePage
+export default HomePage;
 
 const GridContainer = styled.div`
   width: 100%;
@@ -48,8 +68,9 @@ const GridContainer = styled.div`
   margin: 0 auto;
   height: 100vh;
   display: grid;
+  overflow-x: hidden;
 
-  grid-template: 
+  grid-template:
     "m m m m" 75px
     "h h h h" 2fr
     "t t t ." 1fr
@@ -57,10 +78,8 @@ const GridContainer = styled.div`
     "l l l l" 1fr
     ". . . ." 1fr
     ". . . ." 1fr
-    /1fr 1fr 1fr 1fr
-  ;
+    /1fr 1fr 1fr 1fr;
 
-  
   .h {
     img {
       width: 100%;
@@ -117,15 +136,14 @@ const GridContainer = styled.div`
   }
 
   @media screen and (min-width: 576px) {
-    grid-template: 
+    grid-template:
       "m m m m" 75px
       "h h h h" 2fr
       "t t t a" 1fr
       "l l l l" 1fr
       ". . . ." 1fr
       ". . . ." 1fr
-      /1fr 1fr 1fr 1fr
-    ;
+      /1fr 1fr 1fr 1fr;
     .h {
       padding: 0 15vw;
     }
@@ -138,7 +156,7 @@ const GridContainer = styled.div`
   }
 
   @media screen and (min-width: 769px) {
-    grid-template: 
+    grid-template:
       "m m m m m m" 150px
       ". . . . . ." 1fr
       ". . . . . ." 1fr
@@ -147,8 +165,7 @@ const GridContainer = styled.div`
       ". . . . l l" 1fr
       ". . . . . ." 1fr
       ". . . . . ." 1fr
-      /1fr 1fr 1fr 1fr 1fr 1fr
-    ;
+      /1fr 1fr 1fr 1fr 1fr 1fr;
     .h {
       padding: 0;
       align-self: center;
@@ -168,4 +185,4 @@ const GridContainer = styled.div`
       text-align: left;
     }
   }
-`
+`;

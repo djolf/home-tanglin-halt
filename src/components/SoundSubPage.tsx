@@ -36,7 +36,6 @@ const SoundSubPage = (props: IProps) => {
         }}
         layoutId={`sound${props.id}`}
         onLayoutAnimationComplete={() => {
-          console.log('loaded')
           setLoaded(true)
         }}
       >
@@ -92,7 +91,7 @@ const Wrapper = styled(motion.div)`
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 2;
+  z-index: 4;
   background: transparent;
   img {
     width: 100%;

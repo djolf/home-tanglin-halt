@@ -12,7 +12,13 @@ const WriteUp = () => {
     dataStore.setCurrentPage(1);
   }, []);
   return (
-    <motion.div className="Writeup">
+    <motion.div
+      className="Writeup"
+      transition={{ duration: 0.5 }}
+      initial={{ x: "100vw" }}
+      animate={{ x: 0 }}
+      exit={{ x: "-100vw" }}
+    >
       <GridContainer>
         <div className="menu">
           <Menu showLogo />
@@ -50,7 +56,6 @@ const WriteUp = () => {
         <div
           className="scroll"
           onClick={() => {
-            // dataStore.setCurrentPage(2);
             history.push("/music-video");
           }}
         >
@@ -92,6 +97,7 @@ const GridContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  overflow-x: hidden;
 
   img {
     max-width: 100%;

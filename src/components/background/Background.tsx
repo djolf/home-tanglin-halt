@@ -3,9 +3,7 @@ import { observer } from "mobx-react-lite";
 import styled from "styled-components";
 import dataStore from "../../store";
 import { Pages } from "../model";
-import vignette from "../../assets/videos/vignettes.mp4"; 
-import { useEffect, useState } from "react";
-import { autorun } from "mobx";
+import vignette from "../../assets/videos/vignettes2.mp4"; 
 
 const BG = [
   {
@@ -34,27 +32,18 @@ const BG = [
   },
   {
     name: "thanks",
-    // background: "linear-gradient(to bottom, #e8f7ff 35%, #d1efff 35% 100%)",
   },
 ];
 
 const Background = observer(() => {
-  const [isLoading, setIsLoading] = useState(false);
-  useEffect(() => {
-    autorun(() => {
-      if ([Pages.HOME, Pages.WRITEUP].includes(dataStore.currentPage)) {
-        setIsLoading(true);
-      }
-    })
-  }, [])
   return (
     <Wrapper
       background={BG[dataStore.currentPage].background}
     >
       {[Pages.HOME, Pages.WRITEUP].includes(dataStore.currentPage) && (
         <>
-          <video autoPlay muted loop preload="auto" onPlay={() => setIsLoading(false)}>
-            <source src={vignette} type="video/mp4" />
+          <video autoPlay muted loop preload="auto">
+            <source src={vignette} />
           </video>
         </>
       )}
@@ -163,5 +152,10 @@ const Wrapper = styled.div<BackgroundProps>`
   background: ${(props) => props.background || "white"};
   @media screen and (min-width: 769px) {
     background: ${(props) => props.background || "white"};
+  }
+  video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 `;

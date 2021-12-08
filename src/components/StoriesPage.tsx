@@ -40,7 +40,7 @@ const StoriesPage = () => {
             People make home, and in Tanglin Halt, there’s a tapestry of stories
             to uncover, both difficult and joyous. And those are the stories
             here—a compilation of living, 59 years in the making.
-            <div className="button">SEE THEIR STORIES</div>
+            <div className="button" onClick={() => history.push("/stories-detail")}>SEE THEIR STORIES</div>
           </div>
           <div className="image">
             <img src={image} alt="" />
@@ -143,6 +143,7 @@ const GridContainer = styled.div`
       justify-content: center;
       font-family: Rubik;
       font-weight: 400;
+      font-size: 14px;
       margin-right: auto;
       margin-top: 15px;
       text-align: center;
@@ -225,25 +226,34 @@ interface IProps {
   fontSize?: string;
   mobileFontSize?: string;
   tabletFontSize?: string;
+  strokeWidth?: number;
+  textAlign?:string;
+  spacing?: string;
+  lineHeight?: string;
 }
 
-const StrokedText = styled.div<IProps>`
+export const StrokedText = styled.div<IProps>`
   font-family: hagona;
   font-size: ${(props) =>
     props.mobileFontSize ? props.mobileFontSize : "3.6rem"};
-  line-height: 1.2;
+  line-height: ${(props) =>
+    props.lineHeight ? props.lineHeight : "1.2"};;
   color: ${(props) => (props.color ? props.color : "white")};
   -webkit-text-fill-color: transparent;
-  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-width: ${props => props.strokeWidth ? props.strokeWidth : 2}px;
+  text-align: ${props => props.textAlign ? props.textAlign : "left"};
+  letter-spacing: ${props => props.spacing ? props.spacing : "1px"};
+  white-space: nowrap;
 
   @media screen and (min-width: 769px) {
     font-size: ${(props) =>
       props.tabletFontSize ? props.tabletFontSize : "4rem"};
-    line-height: 1.3;
+    line-height: ${(props) =>
+    props.lineHeight ? props.lineHeight : "1.3"};;
   }
 
   @media screen and (min-width: 992px) {
     font-size: ${(props) => (props.fontSize ? props.fontSize : "4rem")};
-    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-width: ${props => props.strokeWidth ? props.strokeWidth : 2}px;
   }
 `;

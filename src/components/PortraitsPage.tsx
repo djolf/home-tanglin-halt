@@ -39,7 +39,7 @@ const PortraitsPage = () => {
                 mavericks as they discover parts of Tanglin Halt that connect to
                 their artistic journey, for the very first time.
               </div>
-              <div className="button">SEE THEIR JOURNEY</div>
+              <div className="button" onClick={() => history.push("/portraits-details")}>SEE THEIR JOURNEY</div>
               <div className="p1">
                 <img src={p1} alt="" />
               </div>
@@ -131,7 +131,6 @@ const GridContainer = styled.div`
         justify-content: center;
         font-family: Rubik;
         font-weight: 400;
-        font-size: 0.9rem;
         margin-left: auto;
         margin-right: 20%;
         margin-top: 15px;

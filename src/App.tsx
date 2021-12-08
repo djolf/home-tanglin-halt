@@ -5,8 +5,10 @@ import Background from "./components/background/Background";
 import HomePage from "./components/HomePage";
 import MVPage from "./components/MVPage";
 import PortraitsPage from "./components/PortraitsPage";
+import PortraitsSubPage from "./components/PortraitsSubPage";
 import SoundGallery from "./components/SoundGallery";
 import StoriesPage from "./components/StoriesPage";
+import StoriesSubPage from "./components/StoriesSubPage";
 import ThanksPage from "./components/ThanksPage";
 import WriteUp from "./components/WriteUp";
 
@@ -24,11 +26,17 @@ const App = () => {
           <Route path="/stories" render={() => {
             return <StoriesPage />
           }}/>
+          <Route path="/stories-detail" render={() => {
+            return <StoriesSubPage />
+          }}/>
           <Route path="/sound-gallery" render={() => {
             return <SoundGallery />
           }}/>
           <Route path="/portraits" render={() => {
             return <PortraitsPage />
+          }} />
+          <Route path="/portraits-details" render={() => {
+            return <PortraitsSubPage />
           }} />
           <Route path="/music-video" render={() => {
             return <MVPage />
