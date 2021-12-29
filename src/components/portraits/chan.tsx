@@ -14,7 +14,7 @@ const ChanPage = () => {
         <div className="green"></div>
         <div className="question">So tell me&mdash;who are you?</div>
         <div className="answer">
-          Hey, I’m Chan Hao (@chan.psb), but everyone calls me Chan. I
+          Hey, I’m Chan Hao (<a href="https://www.instagram.com/chan.psb/">@chan.psb</a>), but everyone calls me Chan. I
           photograph architecture and cities, mainly Singapore now because...
           well, it’s hard to go anywhere else! My work now is centered around my
           concerns about the documentation and representation of our city.

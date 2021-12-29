@@ -18,11 +18,19 @@ const AshwinPage = () => {
         <div className="blue"></div>
         <div className="question">So tell me&mdash;who are you?</div>
         <div className="answer">
-          My name is Ashwin Menon (@shwin.here), I’m a musician from Singapore
-          but I’ve been living in the UK for the last 6 years, working and
-          performing with my band Oya Paya (@oyapaya)—named after “Oya Peya
-          Som”, our favourite Singaporean game! (check us out on Spotify!) I’m
-          also working at The Music Parlour (@themusicparloursingapore).
+          My name is Ashwin Menon (
+          <a href="https://www.instagram.com/shwin.here/">@shwin.here</a>), I’m
+          a musician from Singapore but I’ve been living in the UK for the last
+          6 years, working and performing with my band{" "}
+          <a href="https://www.facebook.com/oyapaya/"><b>Oya Paya</b></a> (
+          <a href="https://www.instagram.com/oyapaya/">@oyapaya</a>)—named after
+          “Oya Peya Som”, our favourite Singaporean game! (check us out on
+          Spotify!) I’m also working at{" "}
+          <a href="https://themusicparlour.com.sg/"><b>The Music Parlour</b></a> (
+          <a href="https://www.instagram.com/themusicparloursingapore/">
+            @themusicparloursingapore
+          </a>
+          ).
         </div>
         <img src={hero} alt="Ashwin Menon" />
         <div className="text-section">
@@ -47,7 +55,7 @@ const AshwinPage = () => {
           </StrokedText>
         </div>
       </Hero>
-      <div className="img-section">
+      <div className="img-section mw-1200">
         <div className="left">
           <img src={img1} alt="" />
           <img src={img2} alt="" />
@@ -58,20 +66,20 @@ const AshwinPage = () => {
             what were some of your first memories falling in love with it?
           </div>
           <div className="answer">
-            For me, the aerospace industry was a very stressful place to
-            be—especially after doing it for almost 18 years. So now, you can
-            probably guess my age huh? (laughs) I wanted something different,
-            more relaxing that I didn’t have to be stressed by—so I thought, why
-            not!
+            My mom was actually a professional musician, playing piano and
+            singing in bars—just chasing the dream. Once she had a family, she
+            stopped, but she cultivated this love of music in me, right from the
+            time I heard Michael Jackson’s Thriller to the point where she
+            bought me my first drum set.
           </div>
           <div className="answer">
-            I’ve learnt the fundamentals of cutting hair, and I’ve been cutting
-            hair for my friends and family since I was 17. Even in Singapore
-            Airlines, the guys will say “Eh Mirzi, cut our hair!”, so lunch time
-            became practice time for me. (laughs) So, since then, I’ve spent
-            time honing my skills at great spots like The Golden Rule at Race
-            Course Road, and now at my own shop—and I’m loving every moment of
-            it man.
+            She also taught me the basics of playing, sparking off a passion
+            that I’m glad I stuck to—yeah man, it’s really all down to my mom’s
+            love and support that I fell in love with music. And the interesting
+            thing is, if she didn’t settle down and stop performing
+            professionally, we probably wouldn’t be this close and have the
+            opportunities to share and explore music together. Funny how life
+            works I guess.
           </div>
           <div className="question">
             What do you feel about Singapore’s music scene? And now, after
@@ -125,7 +133,7 @@ const AshwinPage = () => {
       </div>
       <div className="mw-1200 my-20">
         <div className="answer">
-          To be honest, as a producer I don’t really find that balance! (laughs)
+          To be honest, as a producer I don’t really find that balance! (<i>laughs</i>)
           I lean very much towards traditional instruments, while using the
           digital component to make up for gear I can never afford. I guess I
           feel like progress should always serve to improve what is already
@@ -133,7 +141,7 @@ const AshwinPage = () => {
         </div>
       </div>
 
-      <div className="last mw-1200">
+      <div className="last mw-1200 my-30">
         <div className="qna">
           <div className="question">
             As you know, Tanglin Halt was home to one of Singapore’s most
@@ -158,9 +166,7 @@ const AshwinPage = () => {
             the bar they set.
           </div>
         </div>
-        <StyledCarousel>
-          <img src={img3} alt="" />
-        </StyledCarousel>
+        <img src={img3} alt="" />
       </div>
       <div className="splash">
         <img src={splash3} alt="" />

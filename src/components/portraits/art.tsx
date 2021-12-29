@@ -18,10 +18,18 @@ const ArtPage = () => {
         <div className="orange">
           <div className="question">So tell me&mdash;who are you?</div>
           <div className="answer">
-            Hi! I’m Mirzi, and I’ve been a barber for just over 8 years,
-            currently at my shop, <u>GOSMACK Barbershop & Supplies</u>—come on
-            down for a cut, anytime! Before that, I used to be an aerospace
-            engineer with Singapore Airlines.
+            Hi! I’m Mirzi (
+            <a href="https://www.instagram.com/art.mirzi/">@art.mirzi</a>), and
+            I’ve been a barber for just over 8 years, currently at my shop,&nbsp;
+            <a href="https://www.facebook.com/gosmackbarbers/">
+              <b>GOSMACK Barbershop & Supplies</b>
+            </a>
+            (
+            <a href="https://www.instagram.com/gosmackbarbers/">
+              @gosmackbarbers
+            </a>
+            )—come on down for a cut, anytime! Before that, I used to be an
+            aerospace engineer with Singapore Airlines.
           </div>
         </div>
         <div className="text-section">
@@ -60,18 +68,18 @@ const ArtPage = () => {
             <div className="answer">
               For me, the aerospace industry was a very stressful place to
               be—especially after doing it for almost 18 years. So now, you can
-              probably guess my age huh? (laughs) I wanted something different,
-              more relaxing that I didn’t have to be stressed by—so I thought,
-              why not!
+              probably guess my age huh? (<i>laughs</i>) I wanted something
+              different, more relaxing that I didn’t have to be stressed by—so I
+              thought, why not!
             </div>
             <div className="answer">
               I’ve learnt the fundamentals of cutting hair, and I’ve been
               cutting hair for my friends and family since I was 17. Even in
               Singapore Airlines, the guys will say “Eh Mirzi, cut our hair!”,
-              so lunch time became practice time for me. (laughs) So, since
-              then, I’ve spent time honing my skills at great spots like The
-              Golden Rule at Race Course Road, and now at my own shop—and I’m
-              loving every moment of it man.
+              so lunch time became practice time for me. (<i>laughs</i>) So,
+              since then, I’ve spent time honing my skills at great spots like
+              The Golden Rule at Race Course Road, and now at my own shop—and
+              I’m loving every moment of it man.
             </div>
           </div>
           <div className="qna">
@@ -195,12 +203,12 @@ const ArtPage = () => {
             Halt place like?”
           </div>
           <div className="answer">
-            Tanglin Halt is a modern kampung—yes it’s an HDB, but it still has
-            that sense of community, a true kampung vibe. So, if you wanted the
-            best traditional nasi lemak, you’d go to Tanglin Halt. If you wanted
-            the best old school salon experience, you’d go to Tanglin Halt.
-            Because I think you’ll simply never be able to find this vibe and
-            feeling ever again, once it’s gone.
+            Tanglin Halt is a modern <i>kampung</i>—yes it’s an HDB, but it
+            still has that sense of community, a true <i>kampung</i> vibe. So,
+            if you wanted the best traditional nasi lemak, you’d go to Tanglin
+            Halt. If you wanted the best old school salon experience, you’d go
+            to Tanglin Halt. Because I think you’ll simply never be able to find
+            this vibe and feeling ever again, once it’s gone.
           </div>
         </div>
       </div>

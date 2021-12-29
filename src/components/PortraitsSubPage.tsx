@@ -7,13 +7,14 @@ import natHead from "../assets/images/nat/head.png";
 import ashwinHead from "../assets/images/ashwin/head.png";
 import chanHead from "../assets/images/chan/head.png";
 import { StrokedText } from "./StoriesPage";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Menu from "./menu/menu";
 import LydiaPage from "./portraits/lydia";
 import ArtPage from "./portraits/art";
 import AshwinPage from "./portraits/ashwin";
 import NatPage from "./portraits/nat";
 import ChanPage from "./portraits/chan";
+import dataStore from "../store";
 
 const Portraits = [
   {
@@ -89,7 +90,9 @@ const PortraitsSubPage = () => {
           className={`dot${i === active ? " active" : ""}`}
           onClick={() => {
             active === i ? setActive(0) : setActive(i);
-            scrollTo(`panel${i}`)
+            setTimeout(()=> {
+              scrollTo(`panel${i}`)
+            }, 210);
           }}
         >
           <div className="tooltip">{Portraits[i-1].name}</div>
@@ -97,6 +100,10 @@ const PortraitsSubPage = () => {
       ))}
     </div>
   );
+
+  useEffect(() => {
+    dataStore.setCurrentPage(6);
+  }, [])
 
   return (
     <Wrapper>

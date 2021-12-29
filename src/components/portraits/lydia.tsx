@@ -37,9 +37,16 @@ const LydiaPage = () => {
           <div className="greenback">
             <div className="question">So tell me&mdash;who are you?</div>
             <div className="answer">
-              Hey, I’m Lydia! I’m an illustration and graphic designer, and one
-              of the co-founders of creative studio Tell Your Children. I also
-              go by the moniker Oak & Bindi.
+              Hey, I’m Lydia (
+              <a href="https://www.instagram.com/oakandbindi/">@oakandbindi</a>
+              )! I’m an illustration and graphic designer, and one of the
+              co-founders of creative studio&nbsp;
+              <a href="https://www.tycstudios.com/">
+                <b>Tell Your Children</b>
+              </a>&nbsp;(
+              <a href="https://www.instagram.com/tellyourchildren/">
+                @tellyourchildren
+              </a>).
             </div>
           </div>
         </div>

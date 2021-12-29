@@ -14,12 +14,16 @@ const NatPage = () => {
     <Wrapper>
       <Hero className="mw-1200">
         <div className="orange"></div>
-        <div className="question">So tell me&mdash;who are you?</div>
-        <div className="answer">
-          Hey! We’re Natasha & Nathaniel, the brother-sister duo behind Kokeball
-          Singapore! We started Kokeball because we wanted to educate and teach
-          people what we’ve learnt about taking care of plants—and show them
-          that it’s not as hard as they think!
+        <div className="qna">
+          <div className="question">So tell me&mdash;who are you?</div>
+          <div className="answer">
+            Hey! We’re Natasha & Nathaniel, the brother-sister duo behind &nbsp;
+            <a href="https://www.kokeball.com/"><b>Kokeball Singapore</b></a> (
+            <a href="https://www.instagram.com/kokeball.sg/">@kokeball.sg</a>)! We
+            started Kokeball because we wanted to educate and teach people what
+            we’ve learnt about taking care of plants—and show them that it’s not
+            as hard as they think!
+          </div>
         </div>
         <img src={hero} alt="" />
         <div className="text-section">
@@ -48,18 +52,18 @@ const NatPage = () => {
         <div className="left">
           <div className="question">Why Kokedama? Heck, why plants!?</div>
           <div className="answer">
-            <b>Natasha:</b> Well, I was living in Melbourne for a while, and it gets
-            pretty lonely over a long period, so I got into plants which was
-            great because it was a living thing to focus on, ...and something
-            that wouldn’t talk back to you either! (laughs) Starting out, I was
-            really afraid of my plants dying, so I don’t think I gave myself the
-            chance to really enjoy the process—but thanks to a very good friend
-            who taught me how to take care of them, by the time I had left
-            Melbourne, my Monstera had gone from 2 leaves to 10! So I wanted to
-            share my knowledge with people, because I want them to feel that fun
-            sense of experimentation, to allow themselves to fall in love with
-            the process of taking care of plants and not be afraid of the
-            results.
+            <b>Natasha:</b> Well, I was living in Melbourne for a while, and it
+            gets pretty lonely over a long period, so I got into plants which
+            was great because it was a living thing to focus on, ...and
+            something that wouldn’t talk back to you either! (<i>laughs</i>) Starting
+            out, I was really afraid of my plants dying, so I don’t think I gave
+            myself the chance to really enjoy the process—but thanks to a very
+            good friend who taught me how to take care of them, by the time I
+            had left Melbourne, my Monstera had gone from 2 leaves to 10! So I
+            wanted to share my knowledge with people, because I want them to
+            feel that fun sense of experimentation, to allow themselves to fall
+            in love with the process of taking care of plants and not be afraid
+            of the results.
           </div>
           <div className="answer">
             <b>Nathaniel:</b> Personally, when I was in the army, I disliked
@@ -69,15 +73,15 @@ const NatPage = () => {
             started messing around with soil... and it actually started becoming
             therapeutic and calming for me! Since then, I’ve been involved in
             the technical side of the business and gotten my hands a lot dirtier
-            since. (laughs) Regarding “Why Kokedamas”, it’s really because of
+            since. (<i>laughs</i>) Regarding “Why Kokedamas”, it’s really because of
             how fun and approachable it is, and the level of customization that
             allows people to express themselves in their own way. It also
             inspires them to be in touch with nature more!
           </div>
           <div className="answer">
-            <b>Natasha:</b> The story and history behind Kokedamas also inspired us,
-            because originally, it came from a place of protecting plants during
-            transportation—balling up their roots so they can be easily
+            <b>Natasha:</b> The story and history behind Kokedamas also inspired
+            us, because originally, it came from a place of protecting plants
+            during transportation—balling up their roots so they can be easily
             transplanted, and realizing there was something beautiful in that
             form, that imperfection of sorts. It’s all stemming from the idea of
             change, and being able to find the beauty in all the nooks and
@@ -98,13 +102,13 @@ const NatPage = () => {
           fears of failure?
         </div>
         <div className="answer">
-          <b>Natasha:</b> Yeah, I’ve noticed that folks in our workshop tend to want a
-          formula to get it right—but what is “right”? I mean, it’s their first
-          time doing it! There’s definitely a lot of fear of failure in the
-          frustration they feel, so we always try to tell them that the beauty
-          is in the fact that they are trying, and that they’re the ones putting
-          it together—so it becomes something they can definitively say is their
-          own. That is inherently beautiful.
+          <b>Natasha:</b> Yeah, I’ve noticed that folks in our workshop tend to
+          want a formula to get it right—but what is “right”? I mean, it’s their
+          first time doing it! There’s definitely a lot of fear of failure in
+          the frustration they feel, so we always try to tell them that the
+          beauty is in the fact that they are trying, and that they’re the ones
+          putting it together—so it becomes something they can definitively say
+          is their own. That is inherently beautiful.
         </div>
       </div>
       <div className="splash">
@@ -112,14 +116,14 @@ const NatPage = () => {
       </div>
       <div className="mw-1200 my-20">
         <div className="answer">
-          <b>Nathaniel:</b> I think lots of Singaporeans tend to strive for perfection,
-          and there’s this huge pressure from society informing us that we kinda
-          have to be that way. And that can mean a huge fear of expression, of
-          deviation in the attempt to get it “correct”. That’s why in our
-          classes, we always try to make it a safe space for people to create,
-          to make mistakes. And as long as they try their best and are
-          personally happy with the result, that is really all that matters—and
-          all it takes to be content, really.
+          <b>Nathaniel:</b> I think lots of Singaporeans tend to strive for
+          perfection, and there’s this huge pressure from society informing us
+          that we kinda have to be that way. And that can mean a huge fear of
+          expression, of deviation in the attempt to get it “correct”. That’s
+          why in our classes, we always try to make it a safe space for people
+          to create, to make mistakes. And as long as they try their best and
+          are personally happy with the result, that is really all that
+          matters—and all it takes to be content, really.
         </div>
       </div>
       <div className="grid-container mw-1200 my-20">
@@ -133,12 +137,12 @@ const NatPage = () => {
             into our identity?
           </div>
           <div className="answer">
-            <b>Nathaniel:</b> I’d like to think that plants don’t think of us (laughs)
-            But I think what the plants can teach us, with regards to Tanglin
-            Halt, is their resilience and adaptability to change. They want to
-            live, to change, and survive, no matter what happens to the world
-            around them. And I think Singaporeans are the same way, having the
-            ability to adapt to new environments, to thrive and grow in new
+            <b>Nathaniel:</b> I’d like to think that plants don’t think of us
+            (<i>laughs</i>) But I think what the plants can teach us, with regards to
+            Tanglin Halt, is their resilience and adaptability to change. They
+            want to live, to change, and survive, no matter what happens to the
+            world around them. And I think Singaporeans are the same way, having
+            the ability to adapt to new environments, to thrive and grow in new
             places.
           </div>
           <div className="answer">
@@ -155,12 +159,12 @@ const NatPage = () => {
             What kind of plant represents Tanglin Halt to you?
           </div>
           <div className="answer">
-            <b>Natasha:</b> Hmmm... that’s a very hard question... I actually think the
-            Bodhi plant (also known as the sacred fig) is very apt. They’ve got
-            beautiful, heart-shaped leaves and grow all over Singapore, somehow
-            thriving even between the toughest concrete on sidewalks or anywhere
-            really—the epitome of adaptability, resilience, and ability to grow
-            through adversity.
+            <b>Natasha:</b> Hmmm... that’s a very hard question... I actually
+            think the Bodhi plant (also known as the sacred fig) is very apt.
+            They’ve got beautiful, heart-shaped leaves and grow all over
+            Singapore, somehow thriving even between the toughest concrete on
+            sidewalks or anywhere really—the epitome of adaptability,
+            resilience, and ability to grow through adversity.
           </div>
           <div className="question">
             When we were talking about the redevelopment, we realised that trees
@@ -169,11 +173,11 @@ const NatPage = () => {
             way to keep these plants in the picture as we move forward?
           </div>
           <div className="answer">
-            <b>Nathaniel:</b> Generally, I think it’s important to be calculated and
-            efficient about it—I mean, there’s no way they are going to be able
-            to uproot and replant all the plants! But it’s about the effort of
-            keeping them in the conversation, to make efforts to protect or move
-            the plants that still have a long way to grow. And I think that
+            <b>Nathaniel:</b> Generally, I think it’s important to be calculated
+            and efficient about it—I mean, there’s no way they are going to be
+            able to uproot and replant all the plants! But it’s about the effort
+            of keeping them in the conversation, to make efforts to protect or
+            move the plants that still have a long way to grow. And I think that
             would work, because we’re such an efficient society—one that
             searches for the best solution.
           </div>
@@ -182,13 +186,13 @@ const NatPage = () => {
       </div>
       <div className="mw-1200 my-20">
         <div className="answer">
-          <b>Natasha:</b> I remember when I was growing up, I had a huge forest right
-          next to our house filled with singing birds, squirrels, and beautiful,
-          lush greenery. But one day, it was all torn down, making way for the
-          condominium beside us. I cried my eyeballs out! But now that I’m
-          older, I recognize the need for space—I mean, we need space for people
-          to live and grow, which means that inevitably, things will have to
-          make way as well.
+          <b>Natasha:</b> I remember when I was growing up, I had a huge forest
+          right next to our house filled with singing birds, squirrels, and
+          beautiful, lush greenery. But one day, it was all torn down, making
+          way for the condominium beside us. I cried my eyeballs out! But now
+          that I’m older, I recognize the need for space—I mean, we need space
+          for people to live and grow, which means that inevitably, things will
+          have to make way as well.
         </div>
         <div className="answer">
           But I think there are sustainable ways to do it, like ensuring the
@@ -212,17 +216,17 @@ const NatPage = () => {
             and beyond?
           </div>
           <div className="answer">
-            <b>Nathaniel:</b> I think the legacy I’d like to leave behind, in our super
-            competitive, fast- paced society, is the importance of being
-            content. To be content with yourself and what you’ve done, to spend
-            time with the people that matter to you. So much of the time, we peg
-            our success to what we can’t control and honestly, what doesn’t even
-            matter, so for me, I think it’s so important to just step back and
-            be genuinely happy with the small victories we have.
+            <b>Nathaniel:</b> I think the legacy I’d like to leave behind, in
+            our super competitive, fast- paced society, is the importance of
+            being content. To be content with yourself and what you’ve done, to
+            spend time with the people that matter to you. So much of the time,
+            we peg our success to what we can’t control and honestly, what
+            doesn’t even matter, so for me, I think it’s so important to just
+            step back and be genuinely happy with the small victories we have.
           </div>
           <div className="answer">
-            <b>Natasha:</b> It’s so difficult, I haven’t thought about this in a while!
-            (laughs) I think... I’d like to leave behind the attitude of
+            <b>Natasha:</b> It’s so difficult, I haven’t thought about this in a
+            while! (<i>laughs</i>) I think... I’d like to leave behind the attitude of
             generosity by looking at ourselves and thinking “How can I give? How
             can I support and uplift?” rather than “What’s in it for me?”. I
             feel that if everyone started from that place of generosity, we’d be
@@ -243,20 +247,20 @@ const NatPage = () => {
           like?”
         </div>
         <div className="answer">
-          <b>Natasha:</b> I think I would tell people that Tanglin Halt was a place
-          where trains would stop, like a gentle pause in the wheels of change.
-          Time came to a standstill, unfazed by the transience of the world
-          around it—until it wasn’t. And whatever it looks like then, I think
-          I’ll still bring my kids there to feel the gravity of that change, and
-          to share the lesson of being adaptable and never forgetting where you
-          come from, before you move forward.
+          <b>Natasha:</b> I think I would tell people that Tanglin Halt was a
+          place where trains would stop, like a gentle pause in the wheels of
+          change. Time came to a standstill, unfazed by the transience of the
+          world around it—until it wasn’t. And whatever it looks like then, I
+          think I’ll still bring my kids there to feel the gravity of that
+          change, and to share the lesson of being adaptable and never
+          forgetting where you come from, before you move forward.
         </div>
         <div className="answer">
-          <b>Nathaniel:</b> I’d say that the development of Tanglin Halt represented
-          the dawn of a new era, the embodiment of change in Singapore. Through
-          pictures, I’d show how it serves as such a poignant story of growth
-          and evolution—and at the same time, a reminder of where we once were,
-          and how far we’ve come.
+          <b>Nathaniel:</b> I’d say that the development of Tanglin Halt
+          represented the dawn of a new era, the embodiment of change in
+          Singapore. Through pictures, I’d show how it serves as such a poignant
+          story of growth and evolution—and at the same time, a reminder of
+          where we once were, and how far we’ve come.
         </div>
       </div>
     </Wrapper>
@@ -364,20 +368,19 @@ const Hero = styled.div`
     flex-direction: column;
     margin-top: -30px;
   }
+  .qna {
+    grid-column: 4;
+    grid-row: 2 / span 2;
+    align-self: end;
+  }
   .question {
     color: #ffffff;
-    grid-column: 4;
-    grid-row: 2;
     padding-left: 30px;
-    align-self: end;
     width: 100%;
   }
   .answer {
     color: #ffffff;
-    grid-column: 4;
-    grid-row: 2 / span 2;
     padding-left: 30px;
-    align-self: end;
     width: 90%;
   }
 `;

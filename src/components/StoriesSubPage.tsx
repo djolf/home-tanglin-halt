@@ -4,8 +4,13 @@ import Menu from "./menu/menu";
 import { StrokedText } from "./StoriesPage";
 import bg from "../assets/images/stories-header.png";
 import { ArticleProps, stories1, stories2 } from "./model";
+import dataStore from "../store";
+import { useEffect } from "react";
 
 const StoriesSubPage = () => {
+  useEffect(() => {
+    dataStore.setCurrentPage(6);
+  }, [])
   return (
     <Wrapper
       initial={{ x: "100vw" }}

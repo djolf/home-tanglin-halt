@@ -60,3 +60,11 @@ img {
 .my-30 {
   margin-top: 30px !important;
 }
+
+a {
+  color: inherit;
+  &:hover {
+    color: inherit;
+    text-decoration: underline;
+  }
+}

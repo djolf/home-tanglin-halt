@@ -3,8 +3,8 @@ import { useHistory } from "react-router";
 import Menu from "./menu/menu";
 import arrow from "../assets/images/arrow-green.png";
 import styled from "styled-components";
-import p1 from "../assets/images/portraits1.jpg";
-import p2 from "../assets/images/portraits2.jpg";
+import p1 from "../assets/images/portraits2.png";
+import p2 from "../assets/images/portraits1.png";
 import dataStore from "../store";
 import { useEffect } from "react";
 

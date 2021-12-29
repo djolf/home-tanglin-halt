@@ -152,6 +152,7 @@ const GridContainer = styled.div`
       grid-area: img;
       position: absolute;
       bottom: 0px;
+      z-index: -1;
     }
   }
 
