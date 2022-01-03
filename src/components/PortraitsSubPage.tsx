@@ -22,35 +22,35 @@ const Portraits = [
     name: "Lydia Yang",
     title: "Graphic Designer/Illustrator",
     img: lydiaHead,
-    page: <LydiaPage/>
+    page: <LydiaPage />
   },
   {
     id: 2,
     name: "Art Mirzi",
     title: "Barber",
     img: artHead,
-    page: <ArtPage/>
+    page: <ArtPage />
   },
   {
     id: 3,
     name: "Nathaniel & Natasha",
-    title: "Botanists",
+    title: "Plant Hobbyists",
     img: natHead,
-    page: <NatPage/>
+    page: <NatPage />
   },
   {
     id: 4,
     name: "Ashwin Menon",
     title: "Musician/Producer",
     img: ashwinHead,
-    page: <AshwinPage/>
+    page: <AshwinPage />
   },
   {
     id: 5,
     name: "Chan Hao",
     title: "Architecture Photographer",
     img: chanHead,
-    page: <ChanPage/>
+    page: <ChanPage />
   },
 ]
 
@@ -90,12 +90,12 @@ const PortraitsSubPage = () => {
           className={`dot${i === active ? " active" : ""}`}
           onClick={() => {
             active === i ? setActive(0) : setActive(i);
-            setTimeout(()=> {
+            setTimeout(() => {
               scrollTo(`panel${i}`)
             }, 210);
           }}
         >
-          <div className="tooltip">{Portraits[i-1].name}</div>
+          <div className="tooltip">{Portraits[i - 1].name}</div>
         </div>
       ))}
     </div>

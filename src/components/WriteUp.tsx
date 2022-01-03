@@ -95,7 +95,7 @@ const GridContainer = styled.div`
   ; */
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  // justify-content: center;
   align-items: center;
   overflow-x: hidden;
 
@@ -148,7 +148,7 @@ const GridContainer = styled.div`
     p {
       max-width: 1000px;
       margin: 0 auto;
-      font-size: 21px;
+      font-size: 1rem;
       margin-bottom: 2rem;
     }
   }
@@ -164,7 +164,7 @@ const GridContainer = styled.div`
     font-size: 20px;
     margin-right: 15px;
     margin-left: auto;
-    margin-bottom: auto;
+    margin-bottom: 15px;
     span {
       margin-right: 1rem;
       padding-bottom: 5px;
@@ -180,6 +180,9 @@ const GridContainer = styled.div`
         font-size: 3rem;
         width: 450px;
       }
+      p {
+        font-size: 1.2rem;
+      }
     }
   }
 
@@ -188,6 +191,9 @@ const GridContainer = styled.div`
       .heading {
         font-size: 3.5rem;
         width: 600px;
+      }
+      p {
+        font-size: 1.4rem;
       }
     }
   }

@@ -93,3 +93,17 @@ code {
 .mx-auto {
   margin: 0 auto !important;
 }
+
+.d-none {
+  display: none !important;
+}
+
+@media screen and (min-width: 992px) {
+  .d-lg-none {
+    display: none !important;
+  }
+
+  .d-lg-block {
+    display: block !important;
+  }
+}

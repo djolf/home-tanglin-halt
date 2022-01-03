@@ -3,7 +3,8 @@ import { observer } from "mobx-react-lite";
 import styled from "styled-components";
 import dataStore from "../../store";
 import { Pages } from "../model";
-import vignette from "../../assets/videos/vignettes2.mp4"; 
+import vignette from "../../assets/videos/vignettes2.mp4";
+import { useMediaQuery } from "react-responsive";
 
 const BG = [
   {
@@ -36,6 +37,25 @@ const BG = [
 ];
 
 const Background = observer(() => {
+  const isMobile = useMediaQuery({ query: `(max-width: 992px)` });
+  const circleVariants = {
+    circle1: {
+      mobile: { width: "200vw", height: "200vw", transition: { type: "tween", delay: 0.9 } },
+      desktop: { width: "100vw", height: "100vw", transition: { type: "tween", delay: 0.9 } },
+    },
+    circle2: {
+      mobile: { width: "150vw", height: "150vw", transition: { type: "tween", delay: 0.6 } },
+      desktop: { width: "75vw", height: "75vw", transition: { type: "tween", delay: 0.6 } },
+    },
+    circle3: {
+      mobile: { width: "100vw", height: "100vw", transition: { type: "tween", delay: 0.3 } },
+      desktop: { width: "50vw", height: "50vw", transition: { type: "tween", delay: 0.3 } },
+    },
+    circle4: {
+      mobile: { width: "50vw", height: "50vw" },
+      desktop: { width: "25vw", height: "25vw" },
+    },
+  }
   return (
     <Wrapper
       background={BG[dataStore.currentPage].background}
@@ -52,7 +72,7 @@ const Background = observer(() => {
           className="portraits"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          exit={{ x: '100vw'  }}
+          exit={{ x: '100vw' }}
           transition={{ duration: 0.1 }}
         >
           <motion.div
@@ -93,37 +113,37 @@ const Background = observer(() => {
         </motion.div>
       )}
       {dataStore.currentPage === Pages.SOUND && (
-        <motion.div 
+        <motion.div
           className="sound"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 1 }}
         >
-          <motion.div 
+          <motion.div
             className="circle"
             initial={{ width: 0, height: 0 }}
-            animate={{ width: "100vw", height: "100vw", transition: { type: "tween", delay: 0.9 } }}
+            animate={isMobile ? circleVariants.circle1.mobile : circleVariants.circle1.desktop}
             exit={{ width: 0, height: 0 }}
             transition={{ type: "spring", duration: 1 }}
           />
-          <motion.div 
+          <motion.div
             className="circle"
             initial={{ width: 0, height: 0 }}
-            animate={{ width: "75vw", height: "75vw", transition: { type: "tween", delay: 0.6 }}}
+            animate={isMobile ? circleVariants.circle2.mobile : circleVariants.circle2.desktop}
             exit={{ width: 0, height: 0 }}
             transition={{ type: "spring", duration: 1 }}
           />
-          <motion.div 
+          <motion.div
             className="circle"
             initial={{ width: 0, height: 0 }}
-            animate={{ width: "50vw", height: "50vw", transition: { type: "tween", delay: 0.3 } }}
+            animate={isMobile ? circleVariants.circle3.mobile : circleVariants.circle3.desktop}
             exit={{ width: 0, height: 0 }}
             transition={{ type: "spring", duration: 1 }}
           />
-          <motion.div 
+          <motion.div
             className="circle"
             initial={{ width: 0, height: 0 }}
-            animate={{ width: "25vw", height: "25vw" }}
+            animate={isMobile ? circleVariants.circle4.mobile : circleVariants.circle4.desktop}
             exit={{ width: 0, height: 0 }}
             transition={{ type: "spring", duration: 1 }}
           />

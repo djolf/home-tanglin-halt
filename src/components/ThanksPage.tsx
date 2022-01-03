@@ -119,14 +119,14 @@ const ThanksPage = () => {
               <div className="name">Eric Chua and the <b>Queenstown Town Council</b></div>
               <div className="name">Sinclair Ang</div>
               <div className="name">Alice Lee, Asmine Lee, and Family</div>
-              <div className="name">Mr Chee and Family<br/><b>Fung Onn Medical Store</b></div>
-              <div className="name">Uncle Lee and Family<br/><b>Hock Ann Confectionary</b></div>
-              <div className="name">Mr Tan and Family<br/><b>Tong Kee Chicken Rice</b></div>
-              <div className="name">Mr &amp; Mrs Deng<br/><b>Tanglin Halt Original Peanut Pancake</b></div>
-              <div className="name">Kimmy, Jemmy, and Family<br/><b>The Peking Room Coffeeshop</b></div>
-              <div className="name">Mr Abdullah Latiff<br/><b>Salon De Benzimen</b></div>
-              <div className="name">Koh Tiong Min (Amin Koh)<br/><b>Amin Koh Cobbler</b></div>
-              <div className="name">Rebecca Wong, Winston Wong, and Family<br/><b>By My Old School</b></div>
+              <div className="name">Mr Chee and Family<br /><b>Fung Onn Medical Store</b></div>
+              <div className="name">Uncle Lee and Family<br /><b>Hock Ann Confectionary</b></div>
+              <div className="name">Mr Tan and Family<br /><b>Tong Kee Chicken Rice</b></div>
+              <div className="name">Mr &amp; Mrs Deng<br /><b>Tanglin Halt Original Peanut Pancake</b></div>
+              <div className="name">Kimmy, Jemmy, and Family<br /><b>The Peking Room Coffeeshop</b></div>
+              <div className="name">Mr Abdullah Latiff<br /><b>Salon De Benzimen</b></div>
+              <div className="name">Koh Tiong Min (Amin Koh)<br /><b>Amin Koh Cobbler</b></div>
+              <div className="name">Rebecca Wong, Winston Wong, and Family<br /><b>By My Old School</b></div>
               <div className="name">Sudha, Sasi, Banumathy, Kanmani, and Friends</div>
               <div className="name">Nimalan, Nithish, Sathyan Maheswaran, Kaashvi, Kaniyan, Harish, Iniya, and Subin</div>
               <div className="endnote">A Project By Lincoln Lim</div>
@@ -158,6 +158,7 @@ const GridContainer = styled.div`
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 15px;
   }
 
   img {
@@ -171,6 +172,9 @@ const GridContainer = styled.div`
     background: #e8f7ff url(${pattern});
     background-blend-mode: multiply;
     display: flex;
+    .container {
+      padding: 0;
+    }
   }
   .header {
     background: #e8f7ff url(${pattern});
@@ -194,6 +198,7 @@ const GridContainer = styled.div`
       display: flex;
       margin: 0 auto 60px;
       justify-content: space-evenly;
+      flex-wrap: wrap;
 
       h2 {
         color: #083d77;
@@ -202,8 +207,9 @@ const GridContainer = styled.div`
         font-family: Rubik;
       }
       .col {
-        section:first-child {
-          margin-bottom: 60px;
+        width: 100%;
+        section {
+          margin-bottom: 30px;
         }
       }
     }
@@ -244,6 +250,14 @@ const GridContainer = styled.div`
       "pg2 " auto
       /* "s" minmax(50px, 250px) */
       / 1fr;
+    
+    .main {
+      .credits {
+        .col {
+          width: 33%;
+        }
+      }
+    }
   }
 
   @media screen and (min-width: 992px) {
@@ -268,7 +282,7 @@ const StrokedText = styled.div<IProps>`
   letter-spacing: 2px;
   @media screen and (min-width: 769px) {
     font-size: ${(props) =>
-      props.tabletFontSize ? props.tabletFontSize : "4rem"};
+    props.tabletFontSize ? props.tabletFontSize : "4rem"};
     line-height: 1.5;
   }
 
@@ -307,6 +321,7 @@ const NameCardWrapper = styled.div`
   }
   .job {
     font-weight: 400;
+    text-align: center;
   }
   .name {
     font-weight: bold;

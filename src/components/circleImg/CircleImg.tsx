@@ -25,11 +25,11 @@ const CircleImg = (props: CircleProps) => {
       onHoverEnd={() => setHover(false)}
     >
       <AnimatePresence>
-        {hover && 
+        {hover &&
           <motion.div
-            initial={{opacity:0}}
-            animate={{opacity:1}}
-            exit={{opacity:0}}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
             className="title"
             style={{
               fontSize: fontSize
@@ -65,13 +65,13 @@ const Wrapper = styled(motion.div)`
 const Circle = styled.div<CircleProps>`
   cursor: pointer;
   background: url(${(props) => props.src}) ${props => props.hover ? 'rgba(0, 0, 0, 0.5)' : ''};
-  background-size: auto;
+  background-size: 200%;
   background-repeat: no-repeat;
   background-position: center;
   background-blend-mode: multiply;
   border-radius: 50%;
-  width: ${(props) => props.size}px;
-  height: ${(props) => props.size}px;
+  width: 70vw;
+  height: 70vw;
   /* box-shadow: 0 0 0 11px #fadbe9, 0 0 0 13px #e33f6f; */
   position: relative;
   &::before {
@@ -119,5 +119,13 @@ const Circle = styled.div<CircleProps>`
       transform: scale(1.5, 1.5);
       opacity: 0;
     }
+  }
+  @media screen and (min-width: 576px) {
+    width: 19vw;
+    height: 19vw;
+  }
+  @media screen and (min-width: 992px) {
+    width: ${(props) => props.size}px;
+    height: ${(props) => props.size}px;
   }
 `;

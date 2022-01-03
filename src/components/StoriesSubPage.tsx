@@ -45,7 +45,7 @@ const Article = (props: ArticleProps) => (
   <ArticleWrapper>
     <div className="text">{`"${props.text}"`}</div>
     <div className="name">{props.name}</div>
-    <div className="title" dangerouslySetInnerHTML={{__html: props.title}}></div>
+    <div className="title" dangerouslySetInnerHTML={{ __html: props.title }}></div>
   </ArticleWrapper>
 );
 
@@ -79,6 +79,7 @@ const Wrapper = styled(motion.div)`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-bottom: 15px;
     .menu {
       height: 150px;
       display: flex;
@@ -87,9 +88,17 @@ const Wrapper = styled(motion.div)`
   }
   .col-container {
     display: flex;
-    padding: 30px;
+    padding: 15px;
+    flex-wrap: wrap;
     .col {
-      width: 50%;
+      width: 100%;
+      padding: 15px;
+    }
+    @media screen and (min-width: 769px) {
+      .col {
+        width: 50%;
+        padding: 30px;
+      }
       padding: 30px;
     }
   }

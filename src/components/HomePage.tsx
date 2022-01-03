@@ -89,7 +89,9 @@ const GridContainer = styled.div`
     grid-area: h;
     justify-self: center;
     align-self: flex-end;
-    padding: 0 15px;
+    // padding: 0 15px;
+    margin-left: 15px;
+    margin-right: 15px;
   }
 
   .t {
@@ -118,7 +120,8 @@ const GridContainer = styled.div`
     justify-self: end;
     align-self: end;
     cursor: pointer;
-    padding: 0 15px;
+    margin-right: 15px;
+    margin-left: 15px;
   }
 
   .l {
@@ -127,8 +130,9 @@ const GridContainer = styled.div`
     font-family: Rubik;
     color: white;
     justify-self: center;
-
     text-align: center;
+    margin-left: 15px;
+    margin-right: 15px;
   }
 
   .m {

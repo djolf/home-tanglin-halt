@@ -20,54 +20,54 @@ const Menu = (props: MenuProps) => {
     name: string;
     url: string;
     key:
-      | "home"
-      | "writeup"
-      | "mv"
-      | "portraits"
-      | "sound"
-      | "stories"
-      | "thanks";
+    | "home"
+    | "writeup"
+    | "mv"
+    | "portraits"
+    | "sound"
+    | "stories"
+    | "thanks";
   }[] = [
-    {
-      name: "Write Up",
-      url: "/writeup",
-      key: "writeup",
-      index: 1,
-    },
-    {
-      name: "Music Video",
-      url: "/music-video",
-      key: "mv",
-      index: 2,
-    },
-    {
-      name: "Portraits",
-      url: "/portraits",
-      key: "portraits",
-      index: 3,
-    },
-    {
-      name: "Sound Capsule",
-      url: "/sound-gallery",
-      key: "sound",
-      index: 4,
-    },
-    {
-      name: "Stories",
-      url: "/stories",
-      key: "stories",
-      index: 5,
-    },
-    {
-      name: "Credits",
-      url: "/thanks",
-      key: "thanks",
-      index: 6,
-    },
-  ];
+      {
+        name: "Write Up",
+        url: "/writeup",
+        key: "writeup",
+        index: 1,
+      },
+      {
+        name: "Music Video",
+        url: "/music-video",
+        key: "mv",
+        index: 2,
+      },
+      {
+        name: "Portraits",
+        url: "/portraits",
+        key: "portraits",
+        index: 3,
+      },
+      {
+        name: "Sound Capsule",
+        url: "/sound-gallery",
+        key: "sound",
+        index: 4,
+      },
+      {
+        name: "Stories",
+        url: "/stories",
+        key: "stories",
+        index: 5,
+      },
+      {
+        name: "Credits",
+        url: "/thanks",
+        key: "thanks",
+        index: 6,
+      },
+    ];
 
   return (
-    <Menubar color={color} style={{display: hideMenu ? 'none':'flex'}}>
+    <Menubar color={color} style={{ display: hideMenu ? 'none' : 'flex' }}>
       {showLogo && (
         <div
           className="logo-container"
@@ -263,6 +263,7 @@ const Menubar = styled.div`
     left: 0;
     bottom: 0;
     right: 0;
+    max-height: 100vh;
     background: rgba(255, 255, 255, 0.95);
     flex-direction: column;
     justify-content: space-evenly;

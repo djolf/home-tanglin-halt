@@ -27,7 +27,10 @@ const SoundGallery = () => {
           <Menu showLogo color="#073d77" hideMenu={currentId !== null} />
         </div>
         <div className="main">
-          <div className="title-group">
+          <StrokedText className="title-group d-lg-none" color="#3d91cb" fontSize="4.4rem" lineHeight="1.2">
+            the sound capsule
+          </StrokedText>
+          <div className="title-group d-none d-lg-block">
             <StrokedText className="title" color="#3d91cb" fontSize="4.4rem">
               the
             </StrokedText>
@@ -45,7 +48,7 @@ const SoundGallery = () => {
           <div className="text">
             Some places are a living, breathing time capsules—the crack you
             tripped on, the trees you climbed, the windows you broke. Immerse
-            yourself into Tanglin Halt through these six 360° experiences—a way
+            yourself into Tanglin Halt through these seven 360° experiences—a way
             to remember what was, long after it’s gone.
           </div>
           {/* <div className="text-area">
@@ -150,10 +153,10 @@ const GridContainer = styled.div`
   display: grid;
   grid-template:
     "menu" 150px
-    ".   " minmax(auto, 150px)
-    "main" 600px
-    "s" minmax(50px, 250px)
+    "main" auto
+    "s" 150px
     / 1fr;
+  overflow: hidden auto;
 
   img {
     max-width: 100%;
@@ -168,27 +171,25 @@ const GridContainer = styled.div`
     grid-area: main;
     align-self: stretch;
     position: relative;
+    row-gap: 1rem;
     padding: 0 15px;
     display: grid;
     grid-template:
-      "Tt  Tt  Tt  Tt  Tt  Tt  .   .   .   .   .   p3  p3  p3  .   .   .   .   .   .  " 1fr
-      "Tt  Tt  Tt  Tt  Tt  Tt  p7  p7  p7  p7  .   p3  p3  p3  .   .   p5  p5  p5  p5 " 1fr
-      "Tt  Tt  Tt  Tt  Tt  Tt  p7  p7  p7  p7  .   p3  p3  p3  .   .   p5  p5  p5  p5 " 1fr
-      "Tt  Tt  Tt  Tt  Tt  Tt  p7  p7  p7  p7  .   .   .   .   .   .   p5  p5  p5  p5 " 1fr
-      ".   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   p5  p5  p5  p5 " 1fr
-      "tx  tx  tx  tx  tx  tx  tx  tx  tx  tx  .   p4  p4  p4  p4  p4  .   .   .   .  " 1fr
-      "tx  tx  tx  tx  tx  tx  tx  tx  tx  tx  .   p4  p4  p4  p4  p4  .   .   .   .  " 1fr
-      ".   .   .   .   .   .   .   .   .   .   .   p4  p4  p4  p4  p4  .   .   .   .  " 1fr
-      ".   .   p1  p1  p1  .   .   .   .   .   .   p4  p4  p4  p4  p4  .   p6  p6  p6 " 1fr
-      ".   .   p1  p1  p1  .   p2  p2  p2  p2  .   p4  p4  p4  p4  p4  .   p6  p6  p6 " 1fr
-      ".   .   p1  p1  p1  .   p2  p2  p2  p2  .   .   .   .   .   .   .   p6  p6  p6 " 1fr
-      ".   .   .   .   .   .   p2  p2  p2  p2  .   .   .   .   .   .   .   .   .   .  " 1fr
-      ".   .   .   .   .   .   p2  p2  p2  p2  .   .   .   .   .   .   .   .   .   .  " 1fr
-      / 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+      "Tt" auto
+      "tx" auto
+      "p1" 90vw
+      "p2" 90vw
+      "p3" 90vw
+      "p4" 90vw
+      "p5" 90vw
+      "p6" 90vw
+      "p7" 90vw
+      /1fr;
 
     .title-group {
       grid-area: Tt;
       align-self: center;
+      justify-self: center;
       .title {
         line-height: 5.5rem;
         &.gallery {
@@ -198,12 +199,13 @@ const GridContainer = styled.div`
     }
     .text {
       grid-area: tx;
-      width: 70%;
+      width: 90%;
       font-family: Rubik;
       font-weight: 400;
       font-size: 0.9rem;
       color: #073d77;
       align-self: center;
+      justify-self: center;
     }
     /* .text-area {
       display: flex;
@@ -265,17 +267,63 @@ const GridContainer = styled.div`
       width: 35%;
     }
   }
+  @media screen and (min-width: 576px) {
+    .main {
+      grid-template:
+        "Tt Tt Tt Tt Tt" auto
+        "tx tx tx tx tx" auto
+        ".  p1 .  p2 . " 1fr
+        "p3 .  p4 .  p5" 1fr
+        ".  p6 .  p7.  " 1fr
+        /20% 20% 20% 20% 20%;
+    }
+  }
+  @media screen and (min-width: 992px) {
+    grid-template:
+    "menu" 150px
+    ".   " minmax(auto, 150px)
+    "main" 600px
+    "s" minmax(50px, 250px)
+    / 1fr;
+    overflow: hidden;
+    .main {
+      grid-template:
+      "Tt  Tt  Tt  Tt  Tt  Tt  .   .   .   .   .   p3  p3  p3  .   .   .   .   .   .  " 1fr
+      "Tt  Tt  Tt  Tt  Tt  Tt  p7  p7  p7  p7  .   p3  p3  p3  .   .   p5  p5  p5  p5 " 1fr
+      "Tt  Tt  Tt  Tt  Tt  Tt  p7  p7  p7  p7  .   p3  p3  p3  .   .   p5  p5  p5  p5 " 1fr
+      "Tt  Tt  Tt  Tt  Tt  Tt  p7  p7  p7  p7  .   .   .   .   .   .   p5  p5  p5  p5 " 1fr
+      ".   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   p5  p5  p5  p5 " 1fr
+      "tx  tx  tx  tx  tx  tx  tx  tx  tx  tx  .   p4  p4  p4  p4  p4  .   .   .   .  " 1fr
+      "tx  tx  tx  tx  tx  tx  tx  tx  tx  tx  .   p4  p4  p4  p4  p4  .   .   .   .  " 1fr
+      ".   .   .   .   .   .   .   .   .   .   .   p4  p4  p4  p4  p4  .   .   .   .  " 1fr
+      ".   .   p1  p1  p1  .   .   .   .   .   .   p4  p4  p4  p4  p4  .   p6  p6  p6 " 1fr
+      ".   .   p1  p1  p1  .   p2  p2  p2  p2  .   p4  p4  p4  p4  p4  .   p6  p6  p6 " 1fr
+      ".   .   p1  p1  p1  .   p2  p2  p2  p2  .   .   .   .   .   .   .   p6  p6  p6 " 1fr
+      ".   .   .   .   .   .   p2  p2  p2  p2  .   .   .   .   .   .   .   .   .   .  " 1fr
+      ".   .   .   .   .   .   p2  p2  p2  p2  .   .   .   .   .   .   .   .   .   .  " 1fr
+      / 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+      .title-group {
+        justify-self: left;
+      }
+      .text {
+        justify-self: left;
+        width: 70%;
+      }
+    }
+  }
 `;
 
 interface IProps {
   fontSize?: string;
+  lineHeight?: string;
 }
 
-export const StrokedText = styled(motion.div)<IProps>`
+export const StrokedText = styled(motion.div) <IProps>`
   font-family: hagona;
   font-size: ${(props) => (props.fontSize ? props.fontSize : "4rem")};
   color: ${(props) => (props.color ? props.color : "white")};
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke-width: 2px;
   user-select: none;
+  ${props => props.lineHeight && `line-height: ${props.lineHeight};`}
 `;

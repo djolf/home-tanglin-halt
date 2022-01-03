@@ -150,8 +150,7 @@ const NatPage = () => {
             encapsulates Tanglin Halt—and us as Singaporeans! There’s always
             going to be buildings built up around you, there’s always going to
             be boxes and pressures built around us, but we should survive and
-            make the most of it—establishing our roots with the littlest bit of
-            dirt, and growing stronger.
+            make the most of it—establishing our roots and growing stronger, wherever we are planted.
           </div>
         </div>
         <div className="g3">

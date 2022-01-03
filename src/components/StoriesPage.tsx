@@ -26,13 +26,13 @@ const StoriesPage = () => {
         </div>
         <div className="main">
           <div className="title-group">
-            <StrokedText className="title" color="#ff6d6d" fontSize="6rem">
+            <StrokedText nowrap className="title" color="#ff6d6d" fontSize="6rem">
               stories
             </StrokedText>
-            <StrokedText className="title" color="#ff6d6d" fontSize="6rem">
+            <StrokedText nowrap className="title" color="#ff6d6d" fontSize="6rem">
               from the
             </StrokedText>
-            <StrokedText className="title" color="#ff6d6d" fontSize="6rem">
+            <StrokedText nowrap className="title" color="#ff6d6d" fontSize="6rem">
               public
             </StrokedText>
           </div>
@@ -80,6 +80,8 @@ const GridContainer = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
   display: grid;
   grid-template:
     "menu" 75px
@@ -150,7 +152,6 @@ const GridContainer = styled.div`
     }
     .image {
       grid-area: img;
-      position: absolute;
       bottom: 0px;
       z-index: -1;
     }
@@ -167,6 +168,7 @@ const GridContainer = styled.div`
     font-size: 20px;
     margin-right: 15px;
     margin-left: auto;
+    background: rgba(255, 255, 255, 0.3);
     span {
       margin-right: 1rem;
       padding-bottom: 5px;
@@ -220,6 +222,7 @@ const GridContainer = styled.div`
   }
 
   @media screen and (min-width: 992px) {
+    overflow-y: hidden;
   }
 `;
 
@@ -228,9 +231,10 @@ interface IProps {
   mobileFontSize?: string;
   tabletFontSize?: string;
   strokeWidth?: number;
-  textAlign?:string;
+  textAlign?: string;
   spacing?: string;
   lineHeight?: string;
+  nowrap?: boolean;
 }
 
 export const StrokedText = styled.div<IProps>`
@@ -244,17 +248,18 @@ export const StrokedText = styled.div<IProps>`
   -webkit-text-stroke-width: ${props => props.strokeWidth ? props.strokeWidth : 2}px;
   text-align: ${props => props.textAlign ? props.textAlign : "left"};
   letter-spacing: ${props => props.spacing ? props.spacing : "1px"};
-  white-space: nowrap;
-
+  
   @media screen and (min-width: 769px) {
     font-size: ${(props) =>
-      props.tabletFontSize ? props.tabletFontSize : "4rem"};
+    props.tabletFontSize ? props.tabletFontSize : "4rem"};
     line-height: ${(props) =>
-    props.lineHeight ? props.lineHeight : "1.3"};;
+    props.lineHeight ? props.lineHeight : "1.3"};
+    ${props => props.nowrap && "white-space: nowrap;"}
   }
-
+      
   @media screen and (min-width: 992px) {
     font-size: ${(props) => (props.fontSize ? props.fontSize : "4rem")};
     -webkit-text-stroke-width: ${props => props.strokeWidth ? props.strokeWidth : 2}px;
+    ${props => props.nowrap && "white-space: nowrap;"}
   }
 `;
