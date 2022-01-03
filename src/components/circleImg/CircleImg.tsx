@@ -1,5 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
+import { useMediaQuery } from "react-responsive";
 import styled from "styled-components";
 
 interface CircleProps {
@@ -11,11 +12,14 @@ interface CircleProps {
   title?: string
   hover?: boolean
   fontSize?: string;
+  isMobile?: boolean;
 }
 
 const CircleImg = (props: CircleProps) => {
   const { size, src, className, onClick, layoutId, title, fontSize } = props;
   const [hover, setHover] = useState(false);
+  const isMobile = useMediaQuery({ query: `(max-width: 575px)` });
+  const isTablet = useMediaQuery({ query: `(min-width: 576px) and (max-width: 991px)` })
   return (
     <Wrapper
       className={className}
@@ -25,21 +29,21 @@ const CircleImg = (props: CircleProps) => {
       onHoverEnd={() => setHover(false)}
     >
       <AnimatePresence>
-        {hover &&
+        {(hover || isMobile || isTablet) &&
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="title"
             style={{
-              fontSize: fontSize
+              fontSize: isMobile ? '22px' : isTablet ? '14px' : fontSize
             }}
           >
             {title}
           </motion.div>
         }
       </AnimatePresence>
-      <Circle size={size} src={src} hover={hover} />
+      <Circle size={size} src={src} hover={hover} isMobile={isMobile || isTablet} />
     </Wrapper>
   );
 };
@@ -64,7 +68,7 @@ const Wrapper = styled(motion.div)`
 
 const Circle = styled.div<CircleProps>`
   cursor: pointer;
-  background: url(${(props) => props.src}) ${props => props.hover ? 'rgba(0, 0, 0, 0.5)' : ''};
+  background: url(${(props) => props.src}) ${props => props.hover ? 'rgba(0, 0, 0, 0.5)' : props.isMobile ? 'rgba(0,0,0,0.2)' : ''};
   background-size: 200%;
   background-repeat: no-repeat;
   background-position: center;
