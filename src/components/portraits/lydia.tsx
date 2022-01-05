@@ -12,8 +12,9 @@ import StyledCarousel from "./Carousel";
 const LydiaPage = () => {
   return (
     <Wrapper>
-      <Hero className="mw-1200">
-        <img src={lydiaHero} alt="Lydia Yang" />
+      <Hero className="mw-1200" img={lydiaHero}>
+        <div className="img-container">
+        </div>
         <div className="text-section">
           <StrokedText
             spacing="3px"
@@ -21,6 +22,7 @@ const LydiaPage = () => {
             strokeWidth={1}
             fontSize="6rem"
             lineHeight="1"
+            mobileFontSize="3rem"
           >
             lydia
           </StrokedText>
@@ -31,6 +33,7 @@ const LydiaPage = () => {
             strokeWidth={1}
             fontSize="6rem"
             lineHeight="1"
+            mobileFontSize="3rem"
           >
             yang
           </StrokedText>
@@ -101,7 +104,56 @@ const LydiaPage = () => {
         with these flats. Maybe it’s the charm of time and how we tend to take
         things for granted till they are gone.
       </div>
-      <div className="grid-section mw-1200">
+      <div className="grid-section mw-1200 d-none d-lg-flex">
+        <div className="col1">
+          <div className="qna g1">
+            <div className="question">
+              You’ve done mural work—how do you resolve the struggle when it comes
+              to creating something uniquely yours while retaining the original
+              aesthetic of your space?
+            </div>
+            <div className="answer">
+              At times, as creatives, we tend to jump at any chance to leave our
+              mark wherever we are able to, but to be able to give back to the
+              community with respect to the design aesthetic of the space and the
+              spirit of the residents would be much more fulfilling for me
+              personally.
+            </div>
+          </div>
+          <img className="g3" src={g2} alt="" />
+        </div>
+        <div className="col2">
+          <img className="g2" src={g1} alt="" />
+          <div className="qna g4">
+            <div className="question">
+              Open brief! If you were commissioned to do a mural on this wall to
+              commemorate Tanglin Halt, what would your concept be? How would you
+              sum it up in the limited time you’ve been here?
+            </div>
+            <div className="answer">
+              I would reject it...(laughs) I think, knowing what I know about
+              Tanglin Halt, I’d leave it untouched. I’d feel like my work would
+              possibly be out of place and imposing in a neighbourhood like
+              Tanglin Halt.
+            </div>
+          </div>
+          <div className="qna g5">
+            <div className="question">
+              What does Singapore stand to lose when we lose places like these to
+              progress? Do you think what we gain (more efficient spaces,
+              modernity, technology) is worth it?
+            </div>
+            <div className="answer">
+              A lot! History, culture, the iconic architecture, and the community
+              itself. My heart goes out to the elderly that’ll have to be uprooted
+              to somewhere they might not be familiar with, along with the new
+              environments they’ll have to adjust to. The second question is a
+              little too tough to answer—I guess time will tell.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="grid-section mw-1200 d-lg-none">
         <div className="qna g1">
           <div className="question">
             You’ve done mural work—how do you resolve the struggle when it comes
@@ -169,7 +221,7 @@ export default LydiaPage;
 
 const Wrapper = styled.div`
   background: rgba(255, 247, 197, 0.5);
-  padding: 60px 120px 120px;
+  padding: 30px 20px 60px;
 
   .mw-1200 {
     max-width: 1200px;
@@ -190,13 +242,14 @@ const Wrapper = styled.div`
   .carousel-section {
     display: flex;
     align-items: stretch;
+    flex-wrap: wrap;
     img {
-      width: 40%;
+      width: 100%;
     }
     .text-section {
-      width: 50%;
-      margin-left: 30px;
+      width: 100%;
       display: flex;
+      margin-top: 30px;
       flex-direction: column;
       .qna:nth-child(2) {
         margin-top: auto;
@@ -208,70 +261,180 @@ const Wrapper = styled.div`
   }
 
   .grid-section {
-    display: grid;
-    grid-template-columns: 2fr 3fr;
-    grid-template-rows: 2fr 1fr 2fr 2fr;
+    display: flex;
+    flex-direction: column;
     margin-top: 50px;
     width: 100%;
-    column-gap: 30px;
+    & > * {
+      margin-bottom: 30px;
+    }
     .g1 {
-      grid-column: 1;
-      grid-row: 1;
+      order: 2;
     }
     .g2 {
-      grid-column: 2;
-      grid-row: 1 / span 2;
+      order: 1;
     }
     .g3 {
-      grid-column: 1;
-      grid-row: 2 / span 3;
+      margin-left: auto;
+      margin-right: auto;
+      order: 3;
     }
     .g4 {
-      grid-column: 2;
-      grid-row: 3;
-      align-self: center;
+      order: 4;
     }
     .g5 {
+      order: 5;
       grid-column: 2;
       grid-row: 4;
     }
     .qna {
-      max-width: 90%;
+      max-width: 100%;
     }
   }
   .full-carousel {
     margin-bottom: 30px;
   }
+  @media screen and (min-width: 768px) {
+    background: rgba(255, 247, 197, 0.5);
+    padding: 60px 120px 120px;
+
+    .mw-1200 {
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .question {
+      color: #386641;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    .answer {
+      color: #386641;
+      /* margin-bottom: 30px; */
+    }
+
+    .carousel-section {
+      display: flex;
+      align-items: stretch;
+      img {
+        width: 40%;
+      }
+      .text-section {
+        width: 50%;
+        margin-left: 30px;
+        display: flex;
+        flex-direction: column;
+        .qna:nth-child(2) {
+          margin-top: auto;
+        }
+      }
+    }
+    .splash {
+      margin: 60px -120px;
+      width: 100vw;
+      img {
+        width: 100%;
+      }
+    }
+
+    .grid-section {
+      display: flex;
+      margin-top: 50px;
+      width: 100%;
+      flex-direction: row;
+      justify-content: space-between;
+      .col1,.col2 {
+        width: 48%;
+        & > * {
+          margin-bottom: 30px;
+        }
+      }
+      .qna {
+        max-width: 90%;
+      }
+    }
+    .full-carousel {
+      margin-bottom: 30px;
+    }
+  }
 `;
 
-const Hero = styled.div`
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  width: 100%;
-  margin-bottom: 60px;
+type HeroProps = {
+  img?: string;
+}
 
-  img {
+const Hero = styled.div<HeroProps>`
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: 30px minmax(auto, 320px);
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 30px;
+  
+  .img-container {
+    background-image: url(${props => props.img});
+    background-position: center top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 52.56%;
+    min-width: 300px;
+    height: 0;
+    overflow: hidden;
     max-width: 100%;
-    grid-column: 2 / span 3;
+    grid-column: 2 / span 6;
     grid-row: 1;
+    margin-left: min(100px, 10%);
   }
   .text-section {
-    grid-column: 1 / span 2;
-    grid-row: 1;
-    align-self: center;
+    grid-column: 1 / span 6;
+    grid-row: 2;
+    align-self: end;
     justify-self: center;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 
     .indent {
-      margin-left: 100px;
+      margin-left: 20%;
       margin-bottom: 30px;
     }
 
     .greenback {
       background: #d9edb1;
       padding: 30px;
+    }
+  }
+  @media screen and (min-width: 768px) {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    width: 100%;
+    margin-bottom: 60px;
+
+    .img-container {
+      max-width: 100%;
+      grid-column: 2 / span 3;
+      grid-row: 1;
+    }
+    .text-section {
+      grid-column: 1 / span 2;
+      grid-row: 1;
+      align-self: center;
+      justify-self: center;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      .indent {
+        margin-left: 100px;
+        margin-bottom: 30px;
+      }
+
+      .greenback {
+        background: #d9edb1;
+        padding: 30px;
+      }
     }
   }
 `;

@@ -7,7 +7,7 @@
   bottom: 0;
   overflow: hidden;
   .column {
-    width: 25vw;
+    width: 50vw;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -16,6 +16,9 @@
     }
     &:nth-child(3) {
       transform: translateY(25%);
+    }
+    @media screen and (min-width: 768px) {
+      width: 25vw;
     }
   }
   .block {

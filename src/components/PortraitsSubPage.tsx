@@ -15,6 +15,7 @@ import AshwinPage from "./portraits/ashwin";
 import NatPage from "./portraits/nat";
 import ChanPage from "./portraits/chan";
 import dataStore from "../store";
+import { useMediaQuery } from "react-responsive";
 
 const Portraits = [
   {
@@ -57,6 +58,7 @@ const Portraits = [
 const PortraitsSubPage = () => {
   const { Panel } = Collapse;
   const [active, setActive] = useState(0);
+  const isMobile = useMediaQuery({ query: `(max-width: 768px)` })
 
   const scrollTo = (id: any) => {
     const element = document.getElementById(id);
@@ -78,7 +80,7 @@ const PortraitsSubPage = () => {
         scrollTo(`panel${i}`);
       }}
     >
-      <StrokedText className="name">{name}</StrokedText>
+      <StrokedText mobileFontSize="3rem" className="name">{name}</StrokedText>
       <div className="title">{title}</div>
     </Header>
   );
@@ -151,18 +153,18 @@ const Wrapper = styled(motion.div)`
     transform: translateY(-50%);
     background: rgba(0, 0, 0, 0.3);
     display: flex;
-    padding: 10px 10px;
+    padding: 15px 10px;
     flex-direction: column;
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
     border-bottom-left-radius: 50px;
     border-bottom-right-radius: 50px;
     .dot {
-      width: 15px;
-      height: 15px;
+      width: 25px;
+      height: 25px;
       border-radius: 50%;
       background: rgba(255, 255, 255, 0.5);
-      margin: 5px 0;
+      margin: 15px 0;
       cursor: pointer;
       position: relative;
 
@@ -183,20 +185,63 @@ const Wrapper = styled(motion.div)`
         display: block;
       }
     }
+    @media screen and (min-width: 992px) {
+      position: fixed;
+      right: 2%;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.3);
+      display: flex;
+      padding: 15px 10px;
+      flex-direction: column;
+      border-top-left-radius: 50px;
+      border-top-right-radius: 50px;
+      border-bottom-left-radius: 50px;
+      border-bottom-right-radius: 50px;
+      .dot {
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.5);
+        margin: 15px 0;
+        cursor: pointer;
+        position: relative;
+
+        &.active {
+          background: white;
+        }
+        .tooltip {
+          display: none;
+          background: rgba(0,0,0,0.3);
+          position: absolute;
+          right: 200%;
+          color: white;
+          white-space: nowrap;
+          top: -15%;
+          padding: 0 10px;
+        }
+        &:hover .tooltip {
+          display: block;
+        }
+    }
   }
   .menu {
     position: absolute;
-    top: 50px;
+    top: 20px;
     width: 100%;
     max-width: 1200px;
     left: 50%;
     transform: translateX(-50%);
+    @media screen and (min-width: 992px) {
+      top: 50px;
+    }
   }
 `;
 
 const Header = styled.div<{ img: string }>`
   background: url(${(props) => (props.img ? props.img : "")});
   background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
   width: 100%;
   min-height: 300px;
@@ -212,11 +257,13 @@ const Header = styled.div<{ img: string }>`
     background: url(${(props) => (props.img ? props.img : "")})
       rgba(0, 0, 0, 0.5);
     background-blend-mode: multiply;
+    background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     .name,
     .title {
       display: block;
+      text-align: center;
     }
   }
 

@@ -94,7 +94,7 @@ const Background = observer(() => {
             <div className="block orange large"></div>
           </motion.div>
           <motion.div
-            className="column"
+            className="column d-none d-md-flex"
             initial={{ y: "-100vh" }}
             animate={{ y: "25vh", transition: { delay: 0.8 } }}
           >
@@ -103,7 +103,7 @@ const Background = observer(() => {
             <div className="block orange large"></div>
           </motion.div>
           <motion.div
-            className="column"
+            className="column d-none d-md-flex"
             initial={{ y: "-100vh" }}
             animate={{ y: 0, transition: { delay: 1.2 } }}
           >
