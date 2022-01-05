@@ -223,6 +223,7 @@ const Wrapper = styled(motion.div)`
         &:hover .tooltip {
           display: block;
         }
+      }
     }
   }
   .menu {
