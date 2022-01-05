@@ -58,7 +58,7 @@ const ArtPage = () => {
           </div>
         </div>
       </Hero>
-      <div className="carousel-section mw-1200 d-none d-lg-block">
+      <div className="carousel-section mw-1200 d-none d-lg-flex">
         <StyledCarousel>
           <img src={c1} alt="" />
           <img src={c2} alt="" />
@@ -441,6 +441,7 @@ const Wrapper = styled.div`
     .carousel-section {
       display: flex;
       align-items: stretch;
+      margin-bottom: 30px;
       .ant-carousel {
         width: 45%;
       }
