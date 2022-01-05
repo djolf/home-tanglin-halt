@@ -94,7 +94,7 @@ const PortraitsSubPage = () => {
             active === i ? setActive(0) : setActive(i);
             setTimeout(() => {
               scrollTo(`panel${i}`)
-            }, 210);
+            }, 300);
           }}
         >
           <div className="tooltip">{Portraits[i - 1].name}</div>
