@@ -137,7 +137,7 @@ const NatPage = () => {
 
         <img src={img2} alt="" />
       </div>
-      <div className="mw-1200 my-20">
+      <div className="mw-1200 mt-20">
         <div className="question">
           There is something incredibly intimate about working with plants,
           about tending to something daily and being directly responsible for it
@@ -158,7 +158,7 @@ const NatPage = () => {
       <div className="splash">
         <img src={splash} alt="" />
       </div>
-      <div className="mw-1200 my-20">
+      <div className="mw-1200 mt-20">
         <div className="answer">
           <b>Nathaniel:</b> I think lots of Singaporeans tend to strive for
           perfection, and there’s this huge pressure from society informing us
@@ -170,7 +170,7 @@ const NatPage = () => {
           matters—and all it takes to be content, really.
         </div>
       </div>
-      <div className="grid-container mw-1200 my-20">
+      <div className="grid-container mw-1200 mt-20">
         <img className="g1" src={g1} alt="" />
         <div className="g2">
           <div className="question">
@@ -227,7 +227,7 @@ const NatPage = () => {
         </div>
         <img className="g4" src={g2} alt="" />
       </div>
-      <div className="mw-1200 my-20">
+      <div className="mw-1200 mt-20">
         <div className="answer">
           <b>Natasha:</b> I remember when I was growing up, I had a huge forest
           right next to our house filled with singing birds, squirrels, and
@@ -247,7 +247,7 @@ const NatPage = () => {
           generations.
         </div>
       </div>
-      <div className="two-column mw-1200 my-20 d-none d-lg-flex">
+      <div className="two-column mw-1200 mt-20 d-none d-lg-flex">
         <div className="left">
           <img src={img3} alt="" />
         </div>
@@ -280,9 +280,9 @@ const NatPage = () => {
           </div>
         </div>
       </div>
-      <div className="mw-1200 my-20 d-flex flex-column d-lg-none">
+      <div className="mw-1200 mt-20 d-flex flex-column d-lg-none">
         <img src={img3} className="mx-auto" alt="" />
-        <div className="question my-20">
+        <div className="question mt-20">
           Legacy is a key part of Tanglin Halt’s identity—a place laden with
           an amazing amount of truly unique history and truly memorable
           places. What is the legacy you’d like to leave behind—with Kokeball
@@ -309,10 +309,10 @@ const NatPage = () => {
           friends and spread the love of growing and caring for plants.
         </div>
       </div>
-      <div className="mw-1200 my-30">
+      <div className="mw-1200 mt-30">
         <img src={splash2} alt="" />
       </div>
-      <div className="mw-1200 my-30">
+      <div className="mw-1200 mt-30">
         <div className="question">
           Lastly, in 50 years time, when these blocks are likely long gone, what
           would you tell kids if they ask “Hey, what was this Tanglin Halt place

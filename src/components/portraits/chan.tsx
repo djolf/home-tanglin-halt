@@ -42,7 +42,7 @@ const ChanPage = () => {
           </StrokedText>
         </div>
       </Hero>
-      <div className="mw-1200 my-30">
+      <div className="mw-1200 mt-30">
         <div className="question">
           Why architecture photography? What about capturing buildings in stills
           attracts you?
@@ -61,7 +61,7 @@ const ChanPage = () => {
           constantly develop my unique photographic perspective and voice.
         </div>
       </div>
-      <div className="two-column mw-1200 my-20">
+      <div className="two-column mw-1200 mt-20">
         <div className="left">
           <img src={img1} alt="" />
         </div>
@@ -92,10 +92,10 @@ const ChanPage = () => {
           </div>
         </div>
       </div>
-      <div className="mw-1200 my-30">
+      <div className="mw-1200 mt-30">
         <img src={img2} alt="" />
       </div>
-      <div className="mw-1200 my-20">
+      <div className="mw-1200 mt-20">
         <div className="question">
           The estate is certainly and interesting one, where every block feels
           iconic with different design sensibilities that you just can’t find
@@ -115,7 +115,7 @@ const ChanPage = () => {
           for that anymore.
         </div>
       </div>
-      <div className="two-column mw-1200 my-30">
+      <div className="two-column mw-1200 mt-30">
         <div className="left">
           <div className="question">
             Tanglin Halt was Singapore’s first satellite town—even appearing on
@@ -145,7 +145,7 @@ const ChanPage = () => {
       <div className="splash">
         <img src={splash} alt="" />
       </div>
-      <div className="mw-1200 my-20">
+      <div className="mw-1200 mt-20">
         <div className="question">
           If you could preserve just one thing from the architectural anomalies
           of Tanglin Halt, what would it be? What would you fight to keep, even
@@ -160,10 +160,10 @@ const ChanPage = () => {
           gathering point for people to come together and meet up again.
         </div>
       </div>
-      <div className="mw-1200 my-30">
+      <div className="mw-1200 mt-30">
         <img src={splash2} alt="" />
       </div>
-      <div className="mw-1200 my-30">
+      <div className="mw-1200 mt-30">
         <div className="question">
           Lastly, in 50 years time, when these blocks are likely long gone, what
           would you tell kids if they ask “Hey, what was this Tanglin Halt place
