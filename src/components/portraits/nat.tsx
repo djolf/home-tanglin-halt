@@ -97,7 +97,7 @@ const NatPage = () => {
       </div>
       <div className="mw-1200 d-lg-none">
         <img src={img1} alt="" />
-        <div className="question">Why Kokedama? Heck, why plants!?</div>
+        <div className="question mt-30">Why Kokedama? Heck, why plants!?</div>
         <div className="answer">
           <b>Natasha:</b> Well, I was living in Melbourne for a while, and it
           gets pretty lonely over a long period, so I got into plants which

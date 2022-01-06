@@ -17,45 +17,46 @@ const ArtPage = () => {
         <div className="img-container">
         </div>
 
+        <div className="orange">
+        </div>
         <div className="text-section">
-          <div className="orange">
-            <div className="title">
-              <StrokedText
-                spacing="3px"
-                color="#fff7c5"
-                strokeWidth={1}
-                fontSize="6rem"
-                lineHeight="1"
-              >
-                art
-              </StrokedText>
-              <StrokedText
-                className="indent"
-                spacing="3px"
-                color="#fff7c5"
-                strokeWidth={1}
-                fontSize="6rem"
-                lineHeight="1"
-              >
-                mirzi
-              </StrokedText>
-            </div>
-            <div className="question">So tell me&mdash;who are you?</div>
-            <div className="answer">
-              Hi! I’m Mirzi (
-              <a href="https://www.instagram.com/art.mirzi/">@art.mirzi</a>), and
-              I’ve been a barber for just over 8 years, currently at my shop,&nbsp;
-              <a href="https://www.facebook.com/gosmackbarbers/">
-                <b>GOSMACK Barbershop & Supplies</b>
-              </a>
-              (
-              <a href="https://www.instagram.com/gosmackbarbers/">
-                @gosmackbarbers
-              </a>
-              )—come on down for a cut, anytime! Before that, I used to be an
-              aerospace engineer with Singapore Airlines.
-            </div>
+          <StrokedText
+            spacing="3px"
+            color="#fff7c5"
+            strokeWidth={1}
+            fontSize="6rem"
+            lineHeight="1"
+          >
+            art
+          </StrokedText>
+          <StrokedText
+            className="indent"
+            spacing="3px"
+            color="#fff7c5"
+            strokeWidth={1}
+            fontSize="6rem"
+            lineHeight="1"
+          >
+            mirzi
+          </StrokedText>
+        </div>
+        <div className="qna">
+          <div className="question">So tell me&mdash;who are you?</div>
+          <div className="answer">
+            Hi! I’m Mirzi (
+            <a href="https://www.instagram.com/art.mirzi/">@art.mirzi</a>), and
+            I’ve been a barber for just over 8 years, currently at my shop,&nbsp;
+            <a href="https://www.facebook.com/gosmackbarbers/">
+              <b>GOSMACK Barbershop & Supplies</b>
+            </a>
+            (
+            <a href="https://www.instagram.com/gosmackbarbers/">
+              @gosmackbarbers
+            </a>
+            )—come on down for a cut, anytime! Before that, I used to be an
+            aerospace engineer with Singapore Airlines.
           </div>
+
         </div>
       </Hero>
       <div className="carousel-section mw-1200 d-none d-lg-flex">
@@ -494,32 +495,23 @@ type HeroProps = {
 
 const Hero = styled.div<HeroProps>`
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  grid-template-rows: 1fr 3fr 3fr;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(5, 1fr);
   width: 100%;
   margin-bottom: 30px;
 
   .img-container {
     background-image: url(${props => props.img});
-    background-position: center top;
+    background-position: 30%;
     background-size: cover;
     background-repeat: no-repeat;
-    padding-top: 62.56%;
-    min-width: 300px;
-    height: 0;
-    overflow: hidden;
-    max-width: 100%;
-    grid-column: 1 / span 6;
-    grid-row: 1 / span 2;
+    grid-column: 1 / span 8;
+    grid-row: 1 / span 4;
   }
   .text-section {
-    grid-column: 3 / span 6;
+    grid-column: 5 / span 5;
     grid-row: 2 / span 2;
     align-self: center;
-    justify-self: start;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
 
     .indent {
       margin-left: 20%;
@@ -527,44 +519,37 @@ const Hero = styled.div<HeroProps>`
     }
   }
   .orange {
-    grid-column: 3 / span 5;
-    grid-row: 2 / span 2;
+    grid-column: 5 / span 6;
+    grid-row: 3 / span 3;
     background: #ffa963;
+  }
+  .qna {
     padding: 30px;
-    display: flex;
-    flex-direction: column;
-    .title {
-      margin-top: -25%;
-    }
-    .question {
-      margin-top: auto;
-      color: #ffffff;
-    }
-    .answer {
-      color: #ffffff;
-    }
+    grid-column: 5 / span 6;
+    grid-row: 3 / span 3;
+  }
+  .question {
+    margin-top: auto;
+    color: #ffffff;
+  }
+  .answer {
+    color: #ffffff;
   }
   @media screen and (min-width: 992px) {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 1fr 0.5fr 1fr 1fr;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(5, 1fr);
     width: 100%;
     margin-bottom: 60px;
   
     .img-container {
       max-width: 100%;
-      grid-column: 1 / span 3;
+      grid-column: 1 / span 8;
       grid-row: 1 / span 4;
     }
     .text-section {
-      grid-column: 3 / span 2;
-      grid-row: 3 / span 2;
-      align-self: center;
-      justify-self: start;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 0 30px;
+      grid-column: 7 / span 5;
+      grid-row: 2 / span 2;
   
       .indent {
         margin-left: 100px;
@@ -572,19 +557,20 @@ const Hero = styled.div<HeroProps>`
       }
     }
     .orange {
-      grid-column: 3 / span 2;
-      grid-row: 2 / span 2;
+      grid-column: 6 / span 5;
+      grid-row: 3 / span 3;
       background: #ffa963;
-      padding: 30px;
-      display: flex;
-      flex-direction: column;
-      .question {
-        margin-top: auto;
-        color: #ffffff;
-      }
-      .answer {
-        color: #ffffff;
-      }
     }    
+    .question {
+      margin-top: auto;
+      color: #ffffff;
+    }
+    .answer {
+      color: #ffffff;
+    }
+    .qna {
+      grid-column: 6 / span 5;
+      grid-row: 4 / span 2;
+    }
   }
 `;

@@ -468,6 +468,7 @@ const Wrapper = styled.div`
     .last2 {
       margin-top: 60px;
       display: flex;
+      flex-direction: row;
       justify-content: space-between;
       img {
         width: 50%;

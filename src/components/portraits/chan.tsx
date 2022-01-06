@@ -10,16 +10,18 @@ import splash2 from "../../assets/images/chan/splash2.png";
 const ChanPage = () => {
   return (
     <Wrapper>
-      <Hero className="mw-1200">
+      <Hero className="mw-1200" img={hero}>
         <div className="green"></div>
-        <div className="question">So tell me&mdash;who are you?</div>
-        <div className="answer">
-          Hey, I’m Chan Hao (<a href="https://www.instagram.com/chan.psb/">@chan.psb</a>), but everyone calls me Chan. I
-          photograph architecture and cities, mainly Singapore now because...
-          well, it’s hard to go anywhere else! My work now is centered around my
-          concerns about the documentation and representation of our city.
+        <div className="qna">
+          <div className="question">So tell me&mdash;who are you?</div>
+          <div className="answer">
+            Hey, I’m Chan Hao (<a href="https://www.instagram.com/chan.psb/">@chan.psb</a>), but everyone calls me Chan. I
+            photograph architecture and cities, mainly Singapore now because...
+            well, it’s hard to go anywhere else! My work now is centered around my
+            concerns about the documentation and representation of our city.
+          </div>
         </div>
-        <img src={hero} alt="" />
+        <div className="img-container"></div>
         <div className="text-section">
           <StrokedText
             spacing="3px"
@@ -116,7 +118,7 @@ const ChanPage = () => {
         </div>
       </div>
       <div className="two-column mw-1200 mt-30">
-        <div className="left">
+        <div className="left order-2">
           <div className="question">
             Tanglin Halt was Singapore’s first satellite town—even appearing on
             our $1 note! Developed between 1960 and 1967, they charted a sign of
@@ -138,7 +140,7 @@ const ChanPage = () => {
             design into everyday spaces.
           </div>
         </div>
-        <div className="right">
+        <div className="right order-1">
           <img src={img3} alt="" />
         </div>
       </div>
@@ -186,7 +188,7 @@ export default ChanPage;
 
 const Wrapper = styled.div`
   background: rgba(250, 236, 176, 0.5);
-  padding: 60px 120px 120px;
+  padding: 30px;
 
   .mw-1200 {
     max-width: 1200px;
@@ -198,6 +200,7 @@ const Wrapper = styled.div`
     color: #483c46;
     font-weight: bold;
     margin-bottom: 20px;
+    margin-top: 30px;
   }
   .answer {
     color: #483c46;
@@ -206,35 +209,89 @@ const Wrapper = styled.div`
 
   .two-column {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     .left {
-      width: 48%;
+      width: 100%;
     }
     .right {
       display: flex;
       flex-direction: column;
-      width: 48%;
+      width: 100%;
+    }
+    .order-1 {
+      order: 1;
+    }
+    .order-2 {
+      order: 2;
     }
   }
   .splash {
     margin: 30px -120px;
   }
+  @media screen and (min-width: 992px) {
+    background: rgba(250, 236, 176, 0.5);
+    padding: 60px 120px 120px;
+  
+    .mw-1200 {
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  
+    .question {
+      color: #483c46;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    .answer {
+      color: #483c46;
+      margin-bottom: 15px;
+    }
+  
+    .two-column {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      .left {
+        width: 48%;
+      }
+      .right {
+        display: flex;
+        flex-direction: column;
+        width: 48%;
+      }
+    }
+    .splash {
+      margin: 30px -120px;
+      img {
+        width: 100vw;
+      }
+    }    
+  }
 `;
 
-const Hero = styled.div`
-  display: grid;
-  grid-template-columns: 3fr 3fr 2fr 3fr;
-  grid-template-rows: 1fr 2fr 2fr 1fr;
-  width: 100%;
-  margin-bottom: 60px;
+type HeroProps = {
+  img?: string;
+}
 
-  img {
-    grid-column: 1 / span 3;
-    grid-row: 1 / span 4;
+const Hero = styled.div<HeroProps>`
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(7, 1fr);
+  width: 100%;
+  margin-bottom: 30px;
+
+  .img-container {
+    background-image: url(${props => props.img});
+    background-position: center;
+    background-size: cover;
+    grid-column: 1 / span 9;
+    grid-row: 1 / span 5;
   }
   .text-section {
-    grid-column: 3 / span 2;
-    grid-row: 1 / span 2;
+    grid-column: 7 / span 3;
+    grid-row: 4 / span 2;
     align-self: center;
     justify-self: center;
     display: flex;
@@ -248,13 +305,17 @@ const Hero = styled.div`
     }
   }
   .green {
-    grid-column: 3 / span 2;
-    grid-row: 2 / span 3;
+    grid-column: 2 / span 9;
+    grid-row: 2 / span 7;
     background: #739b75;
     padding: 0 30px;
     display: flex;
     flex-direction: column;
-    margin-bottom: -30px;
+  }
+  .qna {
+    grid-column: 2 / span 8;
+    grid-row: 6 / span 2;
+    padding-top: 30px;
   }
   .question {
     color: #ffffff;
@@ -271,5 +332,57 @@ const Hero = styled.div`
     padding-left: 30px;
     align-self: end;
     width: 90%;
+  }
+  @media screen and (min-width: 992px) {
+    display: grid;
+    grid-template-columns: 3fr 3fr 2fr 3fr;
+    grid-template-rows: 1fr 2fr 2fr 1fr;
+    width: 100%;
+    margin-bottom: 60px;
+  
+    img {
+      grid-column: 1 / span 3;
+      grid-row: 1 / span 4;
+    }
+    .text-section {
+      grid-column: 3 / span 2;
+      grid-row: 1 / span 2;
+      align-self: center;
+      justify-self: center;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 0 30px;
+  
+      .indent {
+        margin-left: 100px;
+        margin-bottom: 30px;
+      }
+    }
+    .green {
+      grid-column: 3 / span 2;
+      grid-row: 2 / span 3;
+      background: #739b75;
+      padding: 0 30px;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: -30px;
+    }
+    .question {
+      color: #ffffff;
+      grid-column: 4;
+      grid-row: 2;
+      padding-left: 30px;
+      align-self: end;
+      width: 100%;
+    }
+    .answer {
+      color: #ffffff;
+      grid-column: 4;
+      grid-row: 2 / span 2;
+      padding-left: 30px;
+      align-self: end;
+      width: 90%;
+    }    
   }
 `;

@@ -19,7 +19,7 @@ const LydiaPage = () => {
           <StrokedText
             spacing="3px"
             color="#ffa963"
-            strokeWidth={1}
+            strokeWidth={2}
             fontSize="6rem"
             lineHeight="1"
             mobileFontSize="3rem"
@@ -30,27 +30,29 @@ const LydiaPage = () => {
             className="indent"
             spacing="3px"
             color="#ffa963"
-            strokeWidth={1}
+            strokeWidth={2}
             fontSize="6rem"
             lineHeight="1"
             mobileFontSize="3rem"
           >
             yang
           </StrokedText>
-          <div className="greenback">
-            <div className="question">So tell me&mdash;who are you?</div>
-            <div className="answer">
-              Hey, I’m Lydia (
-              <a href="https://www.instagram.com/oakandbindi/">@oakandbindi</a>
-              )! I’m an illustration and graphic designer, and one of the
-              co-founders of creative studio&nbsp;
-              <a href="https://www.tycstudios.com/">
-                <b>Tell Your Children</b>
-              </a>&nbsp;(
-              <a href="https://www.instagram.com/tellyourchildren/">
-                @tellyourchildren
-              </a>).
-            </div>
+        </div>
+        <div className="greenback">
+        </div>
+        <div className="qna">
+          <div className="question">So tell me&mdash;who are you?</div>
+          <div className="answer">
+            Hey, I’m Lydia (
+            <a href="https://www.instagram.com/oakandbindi/">@oakandbindi</a>
+            )! I’m an illustration and graphic designer, and one of the
+            co-founders of creative studio&nbsp;
+            <a href="https://www.tycstudios.com/">
+              <b>Tell Your Children</b>
+            </a>&nbsp;(
+            <a href="https://www.instagram.com/tellyourchildren/">
+              @tellyourchildren
+            </a>).
           </div>
         </div>
       </Hero>
@@ -366,75 +368,70 @@ type HeroProps = {
 
 const Hero = styled.div<HeroProps>`
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  grid-template-rows: 30px minmax(auto, 320px);
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(5, 1fr);
   width: 100%;
   max-width: 100%;
   margin-bottom: 30px;
   
   .img-container {
     background-image: url(${props => props.img});
-    background-position: center top;
+    background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    padding-top: 52.56%;
-    min-width: 300px;
-    height: 0;
-    overflow: hidden;
-    max-width: 100%;
-    grid-column: 2 / span 6;
-    grid-row: 1;
-    margin-left: min(100px, 10%);
+    grid-column: 2 / span 9;
+    grid-row: 1 / span 4;
   }
   .text-section {
     grid-column: 1 / span 6;
-    grid-row: 2;
-    align-self: end;
-    justify-self: center;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    grid-row: 2 / span 2;
 
     .indent {
       margin-left: 20%;
       margin-bottom: 30px;
     }
 
-    .greenback {
-      background: #d9edb1;
-      padding: 30px;
-    }
   }
-  @media screen and (min-width: 768px) {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 1fr;
-    width: 100%;
-    margin-bottom: 60px;
-
-    .img-container {
-      max-width: 100%;
-      grid-column: 2 / span 3;
-      grid-row: 1;
-    }
-    .text-section {
-      grid-column: 1 / span 2;
-      grid-row: 1;
-      align-self: center;
-      justify-self: center;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-
-      .indent {
-        margin-left: 100px;
-        margin-bottom: 30px;
-      }
-
-      .greenback {
-        background: #d9edb1;
-        padding: 30px;
-      }
-    }
+  .greenback {
+    background: #d9edb1;
+    grid-column: 1 / span 8;
+    grid-row: 4 / span 2;
   }
+  .qna {
+    padding: 30px;
+    grid-column: 1 / span 8;
+    grid-row: 4 / span 2;
+  }
+  // @media screen and (min-width: 768px) {
+  //   display: grid;
+  //   grid-template-columns: repeat(4, 1fr);
+  //   grid-template-rows: repeat(3, 1fr);
+  //   width: 100%;
+  //   margin-bottom: 60px;
+
+  //   .img-container {
+  //     max-width: 100%;
+  //     grid-column: 2 / span 3;
+  //     grid-row: 1 / 3;
+  //   }
+  //   .text-section {
+  //     grid-column: 1 / span 2;
+  //     grid-row: 1;
+
+  //     .indent {
+  //       margin-left: 100px;
+  //       margin-bottom: 30px;
+  //     }
+  //   }
+  //   .greenback {
+  //     background: #d9edb1;
+  //     grid-column: 1 / span 3;
+  //     grid-row: 2 / span 2;
+  //   }
+  //   .qna {
+  //     padding: 30px;
+  //     grid-column: 1 / span 3;
+  //     grid-row: 2 / span 2;
+  //   }
+  // }
 `;
