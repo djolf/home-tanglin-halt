@@ -1,5 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
 import React, { useState } from "react";
+import YouTube from "react-youtube";
 import styled from "styled-components";
 import dataStore from "../store";
 import { StrokedText } from "./SoundGallery";
@@ -25,7 +26,7 @@ const SoundSubPage = (props: IProps) => {
   }
 
   return (
-    <Wrapper exit={{scale: 0}}>
+    <Wrapper exit={{ scale: 0 }}>
       <motion.div
         style={{
           width: "100%",
@@ -41,7 +42,7 @@ const SoundSubPage = (props: IProps) => {
       >
         {loaded && current !== null && (
           <AnimatePresence>
-            <motion.iframe 
+            {/* <motion.iframe 
               width="100%" 
               key={current}
               height="100%" 
@@ -52,20 +53,42 @@ const SoundSubPage = (props: IProps) => {
               initial={{opacity: 0}}
               animate={{opacity: 1}}
               exit={{opacity: 0, transition: { delay: 0.5 }}}
-            ></motion.iframe>
-            <StrokedText 
+            ></motion.iframe> */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0, transition: { delay: 0.5 } }}
+            >
+              <YouTube
+                videoId={playlist[current].id}
+                key={current}
+                title={playlist[current].name}
+                onReady={(e) => e.target.playVideo()}
+                containerClassName="YTPlayer"
+                opts={{
+                  height: '100%',
+                  width: '100%',
+                  playerVars: {
+                    autoplay: 1,
+                    rel: 0,
+                    modestbranding: 1,
+                  }
+                }}
+              />
+            </motion.div>
+            <StrokedText
               key={`text-${current}`}
-              initial={{opacity: 0}}
-              animate={{opacity: 1, transition: { delay: 1 }}}
-              exit={{opacity: 0}} 
-              className="title" 
-              color="white" 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1, transition: { delay: 1 } }}
+              exit={{ opacity: 0 }}
+              className="title"
+              color="white"
               fontSize="3.5rem">
-                {playlist[current].name}
-              </StrokedText> 
+              {playlist[current].name}
+            </StrokedText>
           </AnimatePresence>
         )}
-        <motion.img src={`http://img.youtube.com/vi/${playlist[current].id}/maxresdefault.jpg`} alt="" />
+        {/* <motion.img src={`http://img.youtube.com/vi/${playlist[current].id}/maxresdefault.jpg`} alt="" /> */}
         <div className="close btn" onClick={() => props.dismiss()}>
           <div className="top"></div>
           <div className="bottom"></div>
@@ -140,5 +163,9 @@ const Wrapper = styled(motion.div)`
     cursor: pointer;
     padding: 10px 15px;
     user-select: none;
+  }
+  .YTPlayer {
+    width: 100vw;
+    height: 100vh;
   }
 `;

@@ -111,6 +111,7 @@ const GridContainer = styled.div`
     padding: 15px;
     margin-top: 30px;
     width: 100%;
+    height: 150px;
   }
 
   .main {
@@ -121,6 +122,7 @@ const GridContainer = styled.div`
     font-weight: 400;
     align-self: center;
     padding: 0 15px;
+    margin-bottom: auto;
 
     .text-container {
       display: flex;
@@ -164,7 +166,7 @@ const GridContainer = styled.div`
     font-size: 20px;
     margin-right: 15px;
     margin-left: auto;
-    margin-bottom: 15px;
+    margin-bottom: auto;
     span {
       margin-right: 1rem;
       padding-bottom: 5px;

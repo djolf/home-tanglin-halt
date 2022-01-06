@@ -1,5 +1,6 @@
 {
   "name": "home-tanglin-halt",
+  "homepage": "https://djolf.github.io/home-tanglin-halt/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -16,6 +17,7 @@
     "react-responsive": "^9.0.0-beta.5",
     "react-router-dom": "^5.3.0",
     "react-scripts": "4.0.3",
+    "react-youtube": "^7.14.0",
     "sass": "^1.44.0",
     "styled-components": "^5.3.3",
     "typescript": "^4.5.2"

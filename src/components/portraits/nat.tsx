@@ -12,7 +12,7 @@ import g2 from "../../assets/images/nat/g2.png";
 const NatPage = () => {
   return (
     <Wrapper>
-      <Hero className="mw-1200">
+      <Hero className="mw-1200" img={hero}>
         <div className="orange"></div>
         <div className="qna">
           <div className="question">So tell me&mdash;who are you?</div>
@@ -25,7 +25,7 @@ const NatPage = () => {
             as hard as they think!
           </div>
         </div>
-        <img src={hero} alt="" />
+        <div className="img-container"></div>
         <div className="text-section">
           <StrokedText
             spacing="3px"
@@ -33,6 +33,7 @@ const NatPage = () => {
             strokeWidth={2}
             fontSize="6rem"
             lineHeight="1"
+            mobileFontSize="3rem"
           >
             nathaniel
           </StrokedText>
@@ -43,12 +44,13 @@ const NatPage = () => {
             strokeWidth={2}
             fontSize="6rem"
             lineHeight="1"
+            mobileFontSize="3rem"
           >
-            & natasha
+            &amp; natasha
           </StrokedText>
         </div>
       </Hero>
-      <div className="two-column mw-1200">
+      <div className="two-column mw-1200 d-none d-lg-flex">
         <div className="left">
           <div className="question">Why Kokedama? Heck, why plants!?</div>
           <div className="answer">
@@ -92,6 +94,48 @@ const NatPage = () => {
           <img src={img1} alt="" />
           <img src={img2} alt="" />
         </div>
+      </div>
+      <div className="mw-1200 d-lg-none">
+        <img src={img1} alt="" />
+        <div className="question">Why Kokedama? Heck, why plants!?</div>
+        <div className="answer">
+          <b>Natasha:</b> Well, I was living in Melbourne for a while, and it
+          gets pretty lonely over a long period, so I got into plants which
+          was great because it was a living thing to focus on, ...and
+          something that wouldn’t talk back to you either! (<i>laughs</i>) Starting
+          out, I was really afraid of my plants dying, so I don’t think I gave
+          myself the chance to really enjoy the process—but thanks to a very
+          good friend who taught me how to take care of them, by the time I
+          had left Melbourne, my Monstera had gone from 2 leaves to 10! So I
+          wanted to share my knowledge with people, because I want them to
+          feel that fun sense of experimentation, to allow themselves to fall
+          in love with the process of taking care of plants and not be afraid
+          of the results.
+        </div>
+        <div className="answer">
+          <b>Nathaniel:</b> Personally, when I was in the army, I disliked
+          nature—elements like soil and sand seemed “dirty” to me. During that
+          time, I watched my sister repot and propagate plants and I’d be like
+          “Why would you want to do that?” But in wanting to help her out, I
+          started messing around with soil... and it actually started becoming
+          therapeutic and calming for me! Since then, I’ve been involved in
+          the technical side of the business and gotten my hands a lot dirtier
+          since. (<i>laughs</i>) Regarding “Why Kokedamas”, it’s really because of
+          how fun and approachable it is, and the level of customization that
+          allows people to express themselves in their own way. It also
+          inspires them to be in touch with nature more!
+        </div>
+        <div className="answer">
+          <b>Natasha:</b> The story and history behind Kokedamas also inspired
+          us, because originally, it came from a place of protecting plants
+          during transportation—balling up their roots so they can be easily
+          transplanted, and realizing there was something beautiful in that
+          form, that imperfection of sorts. It’s all stemming from the idea of
+          change, and being able to find the beauty in all the nooks and
+          crannies of change.
+        </div>
+
+        <img src={img2} alt="" />
       </div>
       <div className="mw-1200 my-20">
         <div className="question">
@@ -203,7 +247,7 @@ const NatPage = () => {
           generations.
         </div>
       </div>
-      <div className="two-column mw-1200 my-20">
+      <div className="two-column mw-1200 my-20 d-none d-lg-flex">
         <div className="left">
           <img src={img3} alt="" />
         </div>
@@ -234,6 +278,35 @@ const NatPage = () => {
             can educate people and in turn, they can continue on to teach
             friends and spread the love of growing and caring for plants.
           </div>
+        </div>
+      </div>
+      <div className="mw-1200 my-20 d-flex flex-column d-lg-none">
+        <img src={img3} className="mx-auto" alt="" />
+        <div className="question my-20">
+          Legacy is a key part of Tanglin Halt’s identity—a place laden with
+          an amazing amount of truly unique history and truly memorable
+          places. What is the legacy you’d like to leave behind—with Kokeball
+          and beyond?
+        </div>
+        <div className="answer">
+          <b>Nathaniel:</b> I think the legacy I’d like to leave behind, in
+          our super competitive, fast- paced society, is the importance of
+          being content. To be content with yourself and what you’ve done, to
+          spend time with the people that matter to you. So much of the time,
+          we peg our success to what we can’t control and honestly, what
+          doesn’t even matter, so for me, I think it’s so important to just
+          step back and be genuinely happy with the small victories we have.
+        </div>
+        <div className="answer">
+          <b>Natasha:</b> It’s so difficult, I haven’t thought about this in a
+          while! (<i>laughs</i>) I think... I’d like to leave behind the attitude of
+          generosity by looking at ourselves and thinking “How can I give? How
+          can I support and uplift?” rather than “What’s in it for me?”. I
+          feel that if everyone started from that place of generosity, we’d be
+          a lot more tolerant, harmonious, and forward-thinking. And through
+          Kokeball, I feel like it’s a gift that just keeps giving— where we
+          can educate people and in turn, they can continue on to teach
+          friends and spread the love of growing and caring for plants.
         </div>
       </div>
       <div className="mw-1200 my-30">
@@ -270,7 +343,7 @@ export default NatPage;
 
 const Wrapper = styled.div`
   background: rgba(223, 181, 133, 0.5);
-  padding: 60px 120px 120px;
+  padding: 30px 30px 30px;
 
   .mw-1200 {
     max-width: 1200px;
@@ -305,6 +378,92 @@ const Wrapper = styled.div`
     margin: 30px -120px;
   }
   .grid-container {
+    display: flex;
+    flex-direction: column;
+
+    .g1 {
+      order: 1;
+    }
+
+    .g2 {
+      margin-top: 30px;
+      order: 2;
+    }
+
+    .g3 {
+      margin-top: 30px;
+      order: 4;
+    }
+
+    .g4 {
+      order: 3;
+    }
+    @media screen and (min-width: 576px) {
+      display: grid;
+      grid-template-columns: 5fr 5fr;
+      grid-template-rows: 1fr 1fr 1fr;
+      grid-gap: 30px;
+      .g1 {
+        grid-column: 1;
+        grid-row: 1;
+      }
+      .g2 {
+        margin-top: 0;
+        grid-column: 2;
+        grid-row: 1 / span 2;
+      } 
+      .g3 {
+        margin-top: 0;
+        grid-column: 1;
+        grid-row: 2 / span 2;
+      }
+      .g4 {
+        grid-column: 2;
+        grid-row: 3 / span 2;
+      }
+    }
+  }
+  @media screen and (min-width: 992px) {
+    background: rgba(223, 181, 133, 0.5);
+  padding: 60px 120px 120px;
+
+  .mw-1200 {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .question {
+    color: #671821;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  .answer {
+    color: #671821;
+    margin-bottom: 15px;
+  }
+
+  .two-column {
+    display: flex;
+    justify-content: space-between;
+    .left {
+      width: 48%;
+    }
+    .right {
+      width: 48%;
+      img {
+        margin-bottom: 30px;
+      }
+    }
+  }
+  .splash {
+    margin: 30px -120px;
+    width: 100vw;
+    img {
+      width: 100%;
+    }
+  }
+  .grid-container {
     display: grid;
     grid-template-columns: 5fr 5fr;
     grid-template-rows: 4fr 1fr 4fr;
@@ -330,22 +489,30 @@ const Wrapper = styled.div`
       grid-row: 2 / span 2;
     }
   }
+  }
 `;
 
-const Hero = styled.div`
+type HeroProps = {
+  img?: string;
+}
+
+const Hero = styled.div<HeroProps>`
   display: grid;
-  grid-template-columns: 3fr 3fr 2fr 3fr;
-  grid-template-rows: 1fr 2fr 2fr 1fr;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: 30px 1fr 1fr 1fr 1fr 1fr;
   width: 100%;
   margin-bottom: 60px;
 
-  img {
-    grid-column: 1 / span 3;
+  .img-container {
+    background-image: url(${props => props.img});
+    background-position: center;
+    background-size: cover;
+    grid-column: 1 / span 8;
     grid-row: 1 / span 4;
   }
   .text-section {
-    grid-column: 2 / span 3;
-    grid-row: 1 / span 2;
+    grid-column: 1 / span 9;
+    grid-row: 3 / span 2;
     align-self: center;
     justify-self: end;
     display: flex;
@@ -354,23 +521,24 @@ const Hero = styled.div`
     padding: 0 30px;
 
     .indent {
-      margin-left: 100px;
+      margin-left: 20%;
       margin-bottom: 30px;
+      white-space: nowrap;
     }
   }
   .orange {
-    grid-column: 2 / span 3;
-    grid-row: 1 / span 3;
+    grid-column: 2 / span 9;
+    grid-row: 2 / span 5;
     background: #74684a;
     padding: 0 30px;
     display: flex;
     flex-direction: column;
-    margin-top: -30px;
   }
   .qna {
-    grid-column: 4;
-    grid-row: 2 / span 2;
+    grid-column: 2 / span 9;
+    grid-row: 5 / span 2;
     align-self: end;
+    padding-top: 15px;
   }
   .question {
     color: #ffffff;
@@ -381,5 +549,56 @@ const Hero = styled.div`
     color: #ffffff;
     padding-left: 30px;
     width: 90%;
+  }
+  @media screen and (min-width: 992px) {
+    display: grid;
+    grid-template-columns: 3fr 3fr 2fr 3fr;
+    grid-template-rows: 1fr 2fr 2fr 1fr;
+    width: 100%;
+    margin-bottom: 60px;
+
+    .img-container {
+      grid-column: 1 / span 3;
+      grid-row: 1 / span 4;
+    }
+    .text-section {
+      grid-column: 2 / span 3;
+      grid-row: 1 / span 2;
+      align-self: center;
+      justify-self: end;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 0 30px;
+
+      .indent {
+        margin-left: 100px;
+        margin-bottom: 30px;
+      }
+    }
+    .orange {
+      grid-column: 2 / span 3;
+      grid-row: 1 / span 3;
+      background: #74684a;
+      padding: 0 30px;
+      display: flex;
+      flex-direction: column;
+      margin-top: -30px;
+    }
+    .qna {
+      grid-column: 4;
+      grid-row: 2 / span 2;
+      align-self: end;
+    }
+    .question {
+      color: #ffffff;
+      padding-left: 30px;
+      width: 100%;
+    }
+    .answer {
+      color: #ffffff;
+      padding-left: 30px;
+      width: 90%;
+    }
   }
 `;

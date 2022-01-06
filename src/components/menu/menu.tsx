@@ -277,6 +277,7 @@ const Menubar = styled.div`
     z-index: 3;
     margin: 0;
     padding: 0;
+    height: 100vh;
     li {
       margin: 0 15px;
       cursor: pointer;
