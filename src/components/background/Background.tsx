@@ -62,8 +62,8 @@ const Background = observer(() => {
     >
       {[Pages.HOME, Pages.WRITEUP].includes(dataStore.currentPage) && (
         <>
-          <video autoPlay muted loop preload="auto">
-            <source src={vignette} />
+          <video autoPlay muted loop playsInline preload="auto">
+            <source src={vignette} type="video/mp4" />
           </video>
         </>
       )}
@@ -163,7 +163,7 @@ type BackgroundProps = {
 const Wrapper = styled.div<BackgroundProps>`
   color: white;
   overflow: hidden;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   bottom: 0;

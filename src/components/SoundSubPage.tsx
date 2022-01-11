@@ -42,17 +42,17 @@ const SoundSubPage = (props: IProps) => {
       >
         {loaded && current !== null && (
           <AnimatePresence>
-            {/* <motion.iframe 
-              width="100%" 
+            {/* <motion.iframe
+              width="100%"
               key={current}
-              height="100%" 
-              src={`https://www.youtube.com/embed/${playlist[current].id}?rel=0&autoplay=1`} 
-              title="YouTube video player" frameBorder="0" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              height="100%"
+              src={`https://www.youtube.com/embed/${playlist[current].id}?rel=0&autoplay=1`}
+              title="YouTube video player" frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
-              initial={{opacity: 0}}
-              animate={{opacity: 1}}
-              exit={{opacity: 0, transition: { delay: 0.5 }}}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0, transition: { delay: 0.5 } }}
             ></motion.iframe> */}
             <motion.div
               initial={{ opacity: 0 }}
@@ -71,7 +71,7 @@ const SoundSubPage = (props: IProps) => {
                   playerVars: {
                     autoplay: 1,
                     rel: 0,
-                    modestbranding: 1,
+                    playsinline: 1,
                   }
                 }}
               />

@@ -97,7 +97,6 @@ const GridContainer = styled.div`
   flex-direction: column;
   // justify-content: center;
   align-items: center;
-  overflow-x: hidden;
 
   img {
     max-width: 100%;
@@ -166,7 +165,7 @@ const GridContainer = styled.div`
     font-size: 20px;
     margin-right: 15px;
     margin-left: auto;
-    margin-bottom: auto;
+    margin-bottom: 100px;
     span {
       margin-right: 1rem;
       padding-bottom: 5px;
