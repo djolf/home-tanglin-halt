@@ -290,6 +290,7 @@ const Menubar = styled.div`
       justify-content: flex-start;
       position: unset;
       color: ${(props) => (props.color ? props.color : "white")};
+      height: auto;
     }
   }
 
