@@ -3,6 +3,7 @@ import { Route, Switch, useLocation } from "react-router-dom";
 import "./App.scss";
 import Background from "./components/background/Background";
 import HomePage from "./components/HomePage";
+import MusicLink from "./components/MusicLink";
 import MVPage from "./components/MVPage";
 import PortraitsPage from "./components/PortraitsPage";
 import PortraitsSubPage from "./components/PortraitsSubPage";
@@ -48,6 +49,7 @@ const App = () => {
             return <HomePage/>
           }}/>
         </Switch>
+        <MusicLink />
     </AnimatePresence>
     </>
   );

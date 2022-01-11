@@ -165,7 +165,7 @@ const GridContainer = styled.div`
     font-size: 20px;
     margin-right: 15px;
     margin-left: auto;
-    margin-bottom: 100px;
+    padding-bottom: 100px;
     span {
       margin-right: 1rem;
       padding-bottom: 5px;

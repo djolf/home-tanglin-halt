@@ -292,4 +292,8 @@ const Menubar = styled.div`
       color: ${(props) => (props.color ? props.color : "white")};
     }
   }
+
+  @media screen and (min-width: 992px) {
+    position: unset;
+  }
 `;
