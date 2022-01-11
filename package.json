@@ -1,6 +1,5 @@
 {
   "name": "home-tanglin-halt",
-  "homepage": "https://djolf.github.io/home-tanglin-halt/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
